@@ -1,0 +1,15 @@
+C:\Users\Nuwanda\source\repos\Eldecos\Eldecos\bin\Debug\Eldecos.exe.config
+C:\Users\Nuwanda\source\repos\Eldecos\Eldecos\bin\Debug\Eldecos.exe
+C:\Users\Nuwanda\source\repos\Eldecos\Eldecos\bin\Debug\Eldecos.pdb
+C:\Users\Nuwanda\source\repos\Eldecos\Eldecos\obj\Debug\Eldecos.csproj.AssemblyReference.cache
+C:\Users\Nuwanda\source\repos\Eldecos\Eldecos\obj\Debug\Eldecos.FormMain.resources
+C:\Users\Nuwanda\source\repos\Eldecos\Eldecos\obj\Debug\Eldecos.Properties.Resources.resources
+C:\Users\Nuwanda\source\repos\Eldecos\Eldecos\obj\Debug\Eldecos.csproj.GenerateResource.cache
+C:\Users\Nuwanda\source\repos\Eldecos\Eldecos\obj\Debug\Eldecos.csproj.CoreCompileInputs.cache
+C:\Users\Nuwanda\source\repos\Eldecos\Eldecos\obj\Debug\Eldecos.exe
+C:\Users\Nuwanda\source\repos\Eldecos\Eldecos\obj\Debug\Eldecos.pdb
+C:\Users\Nuwanda\source\repos\Eldecos\Eldecos\obj\Debug\Eldecos.FormLogin.resources
+C:\Users\Nuwanda\source\repos\Eldecos\Eldecos\obj\Debug\Eldecos.FormGestion.resources
+C:\Users\Nuwanda\source\repos\Eldecos\Eldecos\bin\Debug\System.Data.SQLite.dll
+C:\Users\Nuwanda\source\repos\Eldecos\Eldecos\obj\Debug\Eldecos.csproj.Up2Date
+C:\Users\Nuwanda\source\repos\Eldecos\Eldecos\bin\Debug\System.Data.SQLite.xml
