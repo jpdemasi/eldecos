@@ -18,7 +18,9 @@ public static class ConexionSQLite
     public static SQLiteConnection ObtenerConexion()
     {
         var conexion = new SQLiteConnection(cadena);
-        //conexion.Open();
+
+    
+
         return conexion;
     }
 }

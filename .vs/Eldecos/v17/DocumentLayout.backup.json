@@ -1,34 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Nuwanda\\source\\repos\\Eldecos\\",
+  "WorkspaceRootPath": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|C:\\Users\\Nuwanda\\source\\repos\\Eldecos\\eldecos\\formgestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\formgestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|c:\\users\\nuwanda\\documents\\github\\eldecos\\eldecos\\dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|c:\\users\\nuwanda\\source\\repos\\eldecos\\eldecos\\formgestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\eldecos\\formgestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\formgestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|C:\\Users\\Nuwanda\\source\\repos\\Eldecos\\eldecos\\estilodgvpacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\estilodgvpacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\eldecos\\controldia.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\controldia.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|c:\\users\\nuwanda\\source\\repos\\eldecos\\eldecos\\formgestion.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\formgestion.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\eldecos\\formgestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\formgestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|C:\\Users\\Nuwanda\\source\\repos\\Eldecos\\eldecos\\gestorpacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\gestorpacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|C:\\Users\\Nuwanda\\source\\repos\\Eldecos\\eldecos\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|C:\\Users\\Nuwanda\\source\\repos\\Eldecos\\eldecos\\dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\eldecos\\controldia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\controldia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,91 +38,66 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormGestion.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Nuwanda\\source\\repos\\Eldecos\\Eldecos\\FormGestion.Designer.cs",
-              "RelativeDocumentMoniker": "Eldecos\\FormGestion.Designer.cs",
-              "ToolTip": "C:\\Users\\Nuwanda\\source\\repos\\Eldecos\\Eldecos\\FormGestion.Designer.cs",
-              "RelativeToolTip": "Eldecos\\FormGestion.Designer.cs",
-              "ViewState": "AgIAACsBAAAAAAAAAAAhwDkBAAAaAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "DbConnection.cs",
+              "DocumentMoniker": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\DbConnection.cs",
+              "RelativeDocumentMoniker": "Eldecos\\DbConnection.cs",
+              "ToolTip": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\DbConnection.cs*",
+              "RelativeToolTip": "Eldecos\\DbConnection.cs*",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAiwBUAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T19:25:01.449Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GestorPacientes.cs",
-              "DocumentMoniker": "C:\\Users\\Nuwanda\\source\\repos\\Eldecos\\Eldecos\\GestorPacientes.cs",
-              "RelativeDocumentMoniker": "Eldecos\\GestorPacientes.cs",
-              "ToolTip": "C:\\Users\\Nuwanda\\source\\repos\\Eldecos\\Eldecos\\GestorPacientes.cs",
-              "RelativeToolTip": "Eldecos\\GestorPacientes.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAowBoAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T17:53:10.038Z",
+              "WhenOpened": "2025-09-23T11:41:22.585Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "EstiloDgvPacientes.cs",
-              "DocumentMoniker": "C:\\Users\\Nuwanda\\source\\repos\\Eldecos\\Eldecos\\EstiloDgvPacientes.cs",
-              "RelativeDocumentMoniker": "Eldecos\\EstiloDgvPacientes.cs",
-              "ToolTip": "C:\\Users\\Nuwanda\\source\\repos\\Eldecos\\Eldecos\\EstiloDgvPacientes.cs",
-              "RelativeToolTip": "Eldecos\\EstiloDgvPacientes.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAA8AAAAAAAAAA==",
+              "Title": "ControlDia.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\ControlDia.Designer.cs",
+              "RelativeDocumentMoniker": "Eldecos\\ControlDia.Designer.cs",
+              "ToolTip": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\ControlDia.Designer.cs",
+              "RelativeToolTip": "Eldecos\\ControlDia.Designer.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAqwEwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T17:13:53.315Z",
+              "WhenOpened": "2025-09-23T11:04:30.84Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DbConnection.cs",
-              "DocumentMoniker": "C:\\Users\\Nuwanda\\source\\repos\\Eldecos\\Eldecos\\DbConnection.cs",
-              "RelativeDocumentMoniker": "Eldecos\\DbConnection.cs",
-              "ToolTip": "C:\\Users\\Nuwanda\\source\\repos\\Eldecos\\Eldecos\\DbConnection.cs",
-              "RelativeToolTip": "Eldecos\\DbConnection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "ControlDia.cs",
+              "DocumentMoniker": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\ControlDia.cs",
+              "RelativeDocumentMoniker": "Eldecos\\ControlDia.cs",
+              "ToolTip": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\ControlDia.cs",
+              "RelativeToolTip": "Eldecos\\ControlDia.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAiwCQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T16:31:27.191Z"
+              "WhenOpened": "2025-09-23T01:01:43.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormGestion.cs",
+              "DocumentMoniker": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\FormGestion.cs",
+              "RelativeDocumentMoniker": "Eldecos\\FormGestion.cs",
+              "ToolTip": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\FormGestion.cs",
+              "RelativeToolTip": "Eldecos\\FormGestion.cs",
+              "ViewState": "AgIAAOIAAAAAAAAAAAAAwO0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T20:14:51.962Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "FormGestion.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Nuwanda\\source\\repos\\Eldecos\\Eldecos\\FormGestion.cs",
+              "DocumentMoniker": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\FormGestion.cs",
               "RelativeDocumentMoniker": "Eldecos\\FormGestion.cs",
-              "ToolTip": "C:\\Users\\Nuwanda\\source\\repos\\Eldecos\\Eldecos\\FormGestion.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "Eldecos\\FormGestion.cs [Dise\u00F1o]*",
+              "ToolTip": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\FormGestion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Eldecos\\FormGestion.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-18T16:25:58.769Z",
               "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormGestion.cs",
-              "DocumentMoniker": "C:\\Users\\Nuwanda\\source\\repos\\Eldecos\\Eldecos\\FormGestion.cs",
-              "RelativeDocumentMoniker": "Eldecos\\FormGestion.cs",
-              "ToolTip": "C:\\Users\\Nuwanda\\source\\repos\\Eldecos\\Eldecos\\FormGestion.cs*",
-              "RelativeToolTip": "Eldecos\\FormGestion.cs*",
-              "ViewState": "AgIAAIwAAAAAAAAAAAAuwJYAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T16:15:10.3Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FormLogin.cs",
-              "DocumentMoniker": "C:\\Users\\Nuwanda\\source\\repos\\Eldecos\\Eldecos\\FormLogin.cs",
-              "RelativeDocumentMoniker": "Eldecos\\FormLogin.cs",
-              "ToolTip": "C:\\Users\\Nuwanda\\source\\repos\\Eldecos\\Eldecos\\FormLogin.cs",
-              "RelativeToolTip": "Eldecos\\FormLogin.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAswDIAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T16:14:51.952Z"
             }
           ]
         }

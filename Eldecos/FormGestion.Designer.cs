@@ -1,18 +1,14 @@
 ﻿using MiProyecto.ControlesPersonalizados;
 
+
 namespace Eldecos
 {
+    
     partial class FormGestion
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
+   
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -42,8 +38,19 @@ namespace Eldecos
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbRecepcion = new MiProyecto.ControlesPersonalizados.TabControlSinTabs();
             this.tbTurnos = new System.Windows.Forms.TabPage();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.lblMes = new System.Windows.Forms.Label();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.btnAnterior = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.flpDias = new System.Windows.Forms.FlowLayoutPanel();
             this.tbFichas = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
@@ -51,8 +58,8 @@ namespace Eldecos
             this.txtDni = new System.Windows.Forms.TextBox();
             this.dgvPacientes = new System.Windows.Forms.DataGridView();
             this.bntEliminar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -217,7 +224,17 @@ namespace Eldecos
             // 
             // tbTurnos
             // 
-            this.tbTurnos.Controls.Add(this.monthCalendar1);
+            this.tbTurnos.Controls.Add(this.lblMes);
+            this.tbTurnos.Controls.Add(this.btnSiguiente);
+            this.tbTurnos.Controls.Add(this.btnAnterior);
+            this.tbTurnos.Controls.Add(this.label14);
+            this.tbTurnos.Controls.Add(this.label13);
+            this.tbTurnos.Controls.Add(this.label12);
+            this.tbTurnos.Controls.Add(this.label11);
+            this.tbTurnos.Controls.Add(this.label10);
+            this.tbTurnos.Controls.Add(this.label9);
+            this.tbTurnos.Controls.Add(this.label8);
+            this.tbTurnos.Controls.Add(this.flpDias);
             this.tbTurnos.Location = new System.Drawing.Point(4, 25);
             this.tbTurnos.Name = "tbTurnos";
             this.tbTurnos.Padding = new System.Windows.Forms.Padding(3);
@@ -225,15 +242,118 @@ namespace Eldecos
             this.tbTurnos.TabIndex = 0;
             this.tbTurnos.UseVisualStyleBackColor = true;
             // 
-            // monthCalendar1
+            // lblMes
             // 
-            this.monthCalendar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.monthCalendar1.Location = new System.Drawing.Point(260, 131);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
+            this.lblMes.AutoSize = true;
+            this.lblMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMes.Location = new System.Drawing.Point(1009, 64);
+            this.lblMes.Name = "lblMes";
+            this.lblMes.Size = new System.Drawing.Size(40, 29);
+            this.lblMes.TabIndex = 10;
+            this.lblMes.Text = "---";
+            this.lblMes.UseMnemonic = false;
+            // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.Location = new System.Drawing.Point(846, 686);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(67, 31);
+            this.btnSiguiente.TabIndex = 9;
+            this.btnSiguiente.Text = "Sig >";
+            this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
+            // 
+            // btnAnterior
+            // 
+            this.btnAnterior.Location = new System.Drawing.Point(767, 686);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(70, 31);
+            this.btnAnterior.TabIndex = 8;
+            this.btnAnterior.Text = "< Ant";
+            this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(812, 52);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(92, 25);
+            this.label14.TabIndex = 7;
+            this.label14.Text = "Sábado";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(681, 52);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(92, 25);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "Viernes";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(558, 52);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(87, 25);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Jueves";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(418, 52);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(114, 25);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Miercoles";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(306, 52);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(84, 25);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Martes";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(183, 52);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 25);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Lunes";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(45, 52);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(104, 25);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Domingo";
+            // 
+            // flpDias
+            // 
+            this.flpDias.AutoScroll = true;
+            this.flpDias.Location = new System.Drawing.Point(39, 80);
+            this.flpDias.Name = "flpDias";
+            this.flpDias.Size = new System.Drawing.Size(883, 590);
+            this.flpDias.TabIndex = 0;
             // 
             // tbFichas
             // 
+            this.tbFichas.Controls.Add(this.label7);
             this.tbFichas.Controls.Add(this.btnBuscar);
             this.tbFichas.Controls.Add(this.lblBuscar);
             this.tbFichas.Controls.Add(this.txtBuscar);
@@ -241,8 +361,8 @@ namespace Eldecos
             this.tbFichas.Controls.Add(this.txtDni);
             this.tbFichas.Controls.Add(this.dgvPacientes);
             this.tbFichas.Controls.Add(this.bntEliminar);
-            this.tbFichas.Controls.Add(this.button2);
-            this.tbFichas.Controls.Add(this.button1);
+            this.tbFichas.Controls.Add(this.btnModificar);
+            this.tbFichas.Controls.Add(this.btnAgregar);
             this.tbFichas.Controls.Add(this.label5);
             this.tbFichas.Controls.Add(this.label4);
             this.tbFichas.Controls.Add(this.label3);
@@ -260,9 +380,19 @@ namespace Eldecos
             this.tbFichas.TabIndex = 1;
             this.tbFichas.UseVisualStyleBackColor = true;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(346, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(642, 73);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Listado de pacientes";
+            // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(80, 531);
+            this.btnBuscar.Location = new System.Drawing.Point(80, 541);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(117, 38);
             this.btnBuscar.TabIndex = 18;
@@ -273,7 +403,7 @@ namespace Eldecos
             // lblBuscar
             // 
             this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Location = new System.Drawing.Point(77, 489);
+            this.lblBuscar.Location = new System.Drawing.Point(77, 499);
             this.lblBuscar.Name = "lblBuscar";
             this.lblBuscar.Size = new System.Drawing.Size(89, 13);
             this.lblBuscar.TabIndex = 17;
@@ -281,7 +411,7 @@ namespace Eldecos
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(80, 505);
+            this.txtBuscar.Location = new System.Drawing.Point(80, 515);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(117, 20);
             this.txtBuscar.TabIndex = 16;
@@ -289,7 +419,7 @@ namespace Eldecos
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(666, 612);
+            this.label6.Location = new System.Drawing.Point(666, 622);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(26, 13);
             this.label6.TabIndex = 15;
@@ -297,7 +427,7 @@ namespace Eldecos
             // 
             // txtDni
             // 
-            this.txtDni.Location = new System.Drawing.Point(669, 628);
+            this.txtDni.Location = new System.Drawing.Point(669, 638);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(94, 20);
             this.txtDni.TabIndex = 14;
@@ -306,14 +436,14 @@ namespace Eldecos
             // 
             this.dgvPacientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPacientes.Location = new System.Drawing.Point(243, 112);
+            this.dgvPacientes.Location = new System.Drawing.Point(243, 122);
             this.dgvPacientes.Name = "dgvPacientes";
             this.dgvPacientes.Size = new System.Drawing.Size(822, 460);
             this.dgvPacientes.TabIndex = 13;
             // 
             // bntEliminar
             // 
-            this.bntEliminar.Location = new System.Drawing.Point(753, 716);
+            this.bntEliminar.Location = new System.Drawing.Point(753, 726);
             this.bntEliminar.Name = "bntEliminar";
             this.bntEliminar.Size = new System.Drawing.Size(117, 38);
             this.bntEliminar.TabIndex = 12;
@@ -321,28 +451,30 @@ namespace Eldecos
             this.bntEliminar.UseVisualStyleBackColor = true;
             this.bntEliminar.Click += new System.EventHandler(this.bntEliminar_Click);
             // 
-            // button2
+            // btnModificar
             // 
-            this.button2.Location = new System.Drawing.Point(606, 716);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 38);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Modificar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnModificar.Location = new System.Drawing.Point(606, 726);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(117, 38);
+            this.btnModificar.TabIndex = 11;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // button1
+            // btnAgregar
             // 
-            this.button1.Location = new System.Drawing.Point(459, 716);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 38);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAgregar.Location = new System.Drawing.Point(459, 726);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(117, 38);
+            this.btnAgregar.TabIndex = 10;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(867, 612);
+            this.label5.Location = new System.Drawing.Point(867, 622);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 13);
             this.label5.TabIndex = 9;
@@ -351,7 +483,7 @@ namespace Eldecos
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(765, 612);
+            this.label4.Location = new System.Drawing.Point(765, 622);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 8;
@@ -360,7 +492,7 @@ namespace Eldecos
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(566, 612);
+            this.label3.Location = new System.Drawing.Point(566, 622);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 7;
@@ -369,7 +501,7 @@ namespace Eldecos
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(466, 612);
+            this.label2.Location = new System.Drawing.Point(466, 622);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 6;
@@ -378,7 +510,7 @@ namespace Eldecos
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(366, 612);
+            this.label1.Location = new System.Drawing.Point(366, 622);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 5;
@@ -386,35 +518,35 @@ namespace Eldecos
             // 
             // txtMailPaciente
             // 
-            this.txtMailPaciente.Location = new System.Drawing.Point(868, 628);
+            this.txtMailPaciente.Location = new System.Drawing.Point(868, 638);
             this.txtMailPaciente.Name = "txtMailPaciente";
             this.txtMailPaciente.Size = new System.Drawing.Size(94, 20);
             this.txtMailPaciente.TabIndex = 4;
             // 
             // txtTelefonoPaciente
             // 
-            this.txtTelefonoPaciente.Location = new System.Drawing.Point(768, 628);
+            this.txtTelefonoPaciente.Location = new System.Drawing.Point(768, 638);
             this.txtTelefonoPaciente.Name = "txtTelefonoPaciente";
             this.txtTelefonoPaciente.Size = new System.Drawing.Size(94, 20);
             this.txtTelefonoPaciente.TabIndex = 3;
             // 
             // txtDireccionPaciente
             // 
-            this.txtDireccionPaciente.Location = new System.Drawing.Point(569, 628);
+            this.txtDireccionPaciente.Location = new System.Drawing.Point(569, 638);
             this.txtDireccionPaciente.Name = "txtDireccionPaciente";
             this.txtDireccionPaciente.Size = new System.Drawing.Size(94, 20);
             this.txtDireccionPaciente.TabIndex = 2;
             // 
             // txtApellidoPaciente
             // 
-            this.txtApellidoPaciente.Location = new System.Drawing.Point(469, 628);
+            this.txtApellidoPaciente.Location = new System.Drawing.Point(469, 638);
             this.txtApellidoPaciente.Name = "txtApellidoPaciente";
             this.txtApellidoPaciente.Size = new System.Drawing.Size(94, 20);
             this.txtApellidoPaciente.TabIndex = 1;
             // 
             // txtNombrePaciente
             // 
-            this.txtNombrePaciente.Location = new System.Drawing.Point(369, 628);
+            this.txtNombrePaciente.Location = new System.Drawing.Point(369, 638);
             this.txtNombrePaciente.Name = "txtNombrePaciente";
             this.txtNombrePaciente.Size = new System.Drawing.Size(94, 20);
             this.txtNombrePaciente.TabIndex = 0;
@@ -452,6 +584,7 @@ namespace Eldecos
             this.panel1.ResumeLayout(false);
             this.tbRecepcion.ResumeLayout(false);
             this.tbTurnos.ResumeLayout(false);
+            this.tbTurnos.PerformLayout();
             this.tbFichas.ResumeLayout(false);
             this.tbFichas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).EndInit();
@@ -483,10 +616,9 @@ namespace Eldecos
         private System.Windows.Forms.TabPage tbFichas;
         private System.Windows.Forms.TabPage tbMedicos;
         private System.Windows.Forms.TabPage tbNum;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Button bntEliminar;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -503,5 +635,17 @@ namespace Eldecos
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.FlowLayoutPanel flpDias;
+        private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.Button btnAnterior;
+        private System.Windows.Forms.Label lblMes;
     }
 }
