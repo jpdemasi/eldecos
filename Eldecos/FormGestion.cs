@@ -7,65 +7,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MiProyecto.ControlesPersonalizados;
-using System.Data.SQLite;
+using MiProyecto.ControlesPersonalizados; // Asegúrate de que este namespace sea accesible
 using System.Net;
 using System.Globalization;
-
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace Eldecos
 {
-
     public partial class FormGestion : Form
     {
-
         private GestorPacientes gestorPacientes;
+        private GestorMedicos gestorMedicos;
         private DateTime fechaActual;
+
         public FormGestion()
         {
             InitializeComponent();
             fechaActual = DateTime.Now;
             CargarDias();
-
             gestorPacientes = new GestorPacientes();
-
-            //Me aseguro que el evento se asocie al DGV.
+            gestorMedicos = new GestorMedicos();
             dgvPacientes.CellClick += dgvPacientes_CellClick;
 
+            // Inicia la carga de datos de forma asíncrona al iniciar
+            CargarDatosDesdeApiAsync();
 
+            tbRecepcion.SelectedIndex = 0;
+        }
 
-            string pnombre = txtNombrePaciente.Text;
-            string papellido = txtApellidoPaciente.Text;
-            string pdireccion = txtDireccionPaciente.Text;
-            string ptelefono = txtTelefonoPaciente.Text;
-            string pmail = txtMailPaciente.Text;
-            string pdni = txtDni.Text;
-
+        private async Task CargarDatosDesdeApiAsync()
+        {
             try
             {
-                using (var conexion = ConexionSQLite.ObtenerConexion())
-                {
-                    conexion.Open();
-                    string query = "SELECT * FROM pacientes";
-                    SQLiteCommand cmd = new SQLiteCommand(query, conexion);
-                    SQLiteDataReader reader = cmd.ExecuteReader();
-
-                    DataTable dt = new DataTable();
-                    dt.Load(reader);
-
-                    dgvPacientes.DataSource = dt;
-                    EstiloDgvPacientes.AplicarEstilo(dgvPacientes);
-                }
-
-                tbRecepcion.SelectedIndex = 0;
+                dgvPacientes.DataSource = await gestorPacientes.CargarDatosAsync();
+                dgvMedicos.DataSource = await gestorMedicos.CargarDatosAsync();
+                EstiloDgvPacientes.AplicarEstilo(dgvPacientes);
+                EstiloDgvMedicos.AplicarEstilo(dgvMedicos);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show("No se pudieron cargar los datos iniciales desde la API: " + ex.Message, "Error");
             }
-
         }
-
 
         private void LimpiarCampos()
         {
@@ -79,18 +63,15 @@ namespace Eldecos
 
         private void FormGestion_Load(object sender, EventArgs e)
         {
-           
-
+            // Lógica de carga eliminada de aquí, ahora está en CargarDatosDesdeApiAsync()
         }
 
         private void CargarDias()
         {
             flpDias.Controls.Clear();
-
             DateTime primerDia = new DateTime(fechaActual.Year, fechaActual.Month, 1);
             int diasEnMes = DateTime.DaysInMonth(fechaActual.Year, fechaActual.Month);
             int diaSemana = (int)primerDia.DayOfWeek;
-
             diaSemana = diaSemana == 0 ? 6 : diaSemana - 1;
 
             lblMes.Text = fechaActual.ToString("MMMM yyyy", new CultureInfo("es-ES")).ToUpper();
@@ -98,10 +79,9 @@ namespace Eldecos
             for (int i = 0; i < diaSemana; i++)
             {
                 ControlDia cd = new ControlDia();
-                cd.SetDia(0, fechaActual); // Aunque no se use, mantenemos la firma
+                cd.SetDia(0, fechaActual);
                 flpDias.Controls.Add(cd);
             }
-
             for (int dia = 1; dia <= diasEnMes; dia++)
             {
                 ControlDia cd = new ControlDia();
@@ -115,9 +95,11 @@ namespace Eldecos
             tbRecepcion.SelectedIndex = 0;
         }
 
-        private void btnCargarPacientes_Click(object sender, EventArgs e)
+        private async void btnCargarPacientes_Click(object sender, EventArgs e)
         {
             tbRecepcion.SelectedIndex = 1;
+            // Corregido: Ahora se puede usar await porque CargarDatosDesdeApiAsync devuelve Task
+            await CargarDatosDesdeApiAsync();
         }
 
         private void btnMedicos_Click(object sender, EventArgs e)
@@ -138,33 +120,28 @@ namespace Eldecos
                 MessageBoxButtons.OKCancel,
                 MessageBoxIcon.Question
             );
-
             if (resultado == DialogResult.OK)
             {
                 Application.Exit();
             }
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private async void btnBuscar_Click(object sender, EventArgs e)
         {
             string searchText = txtBuscar.Text.Trim();
-
-            // Llamamos al método de búsqueda usando el objeto 'gestorPacientes'
-            DataTable dt = gestorPacientes.BuscarPacientes(searchText);
+            DataTable dt = await gestorPacientes.BuscarPacientesAsync(searchText);
             if (dt != null)
             {
                 dgvPacientes.DataSource = dt;
                 EstiloDgvPacientes.AplicarEstilo(dgvPacientes);
-
             }
         }
 
-        private void bntEliminar_Click(object sender, EventArgs e)
+        private async void bntEliminar_Click(object sender, EventArgs e)
         {
-
             if (dgvPacientes.SelectedRows.Count > 0)
             {
-                // Cargamos el ID de la columna para eliminar los registros.
+                // La columna 'id' debe existir en el DataGridView
                 int id = Convert.ToInt32(dgvPacientes.SelectedRows[0].Cells["id"].Value);
 
                 DialogResult confirmacion = MessageBox.Show(
@@ -176,13 +153,11 @@ namespace Eldecos
 
                 if (confirmacion == DialogResult.Yes)
                 {
-                    bool eliminado = gestorPacientes.EliminarPacientePorId(id);
+                    bool eliminado = await gestorPacientes.EliminarPacientePorIdAsync(id);
                     if (eliminado)
                     {
                         MessageBox.Show("Paciente eliminado correctamente.", "Éxito");
-                        dgvPacientes.DataSource = gestorPacientes.CargarDatos();
-                        EstiloDgvPacientes.AplicarEstilo(dgvPacientes);
-
+                        await CargarDatosDesdeApiAsync();
                         LimpiarCampos();
                     }
                     else
@@ -205,6 +180,7 @@ namespace Eldecos
 
                 txtNombrePaciente.Text = filaSeleccionada.Cells["pnombre"].Value?.ToString() ?? "";
                 txtApellidoPaciente.Text = filaSeleccionada.Cells["papellido"].Value?.ToString() ?? "";
+                // La API devuelve 'pdni' pero lo asignamos a txtDni
                 txtDni.Text = filaSeleccionada.Cells["pdni"].Value?.ToString() ?? "";
                 txtTelefonoPaciente.Text = filaSeleccionada.Cells["ptelefono"].Value?.ToString() ?? "";
                 txtDireccionPaciente.Text = filaSeleccionada.Cells["pdireccion"].Value?.ToString() ?? "";
@@ -212,8 +188,7 @@ namespace Eldecos
             }
         }
 
-
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private async void btnAgregar_Click(object sender, EventArgs e)
         {
             Paciente p = new Paciente
             {
@@ -222,7 +197,8 @@ namespace Eldecos
                 direccion = txtDireccionPaciente.Text,
                 telefono = txtTelefonoPaciente.Text,
                 mail = txtMailPaciente.Text,
-                DNI = txtDni.Text
+                // CORREGIDO: Usar 'dni' en minúsculas
+                dni = txtDni.Text
             };
 
             if (!p.CamposVacios())
@@ -231,50 +207,26 @@ namespace Eldecos
                 return;
             }
 
-            try
+            bool agregado = await gestorPacientes.AgregarPacienteAsync(p);
+            if (agregado)
             {
-                using (var conexion = ConexionSQLite.ObtenerConexion())
-                {
-                    conexion.Open();
-                    string query = "INSERT INTO pacientes (pnombre, papellido, pdireccion, ptelefono, pmail, pdni) " +
-                                   "VALUES (@nombre, @apellido, @direccion, @telefono, @mail, @dni)";
-
-                    SQLiteCommand cmd = new SQLiteCommand(query, conexion);
-                    cmd.Parameters.AddWithValue("@nombre", p.nombre);
-                    cmd.Parameters.AddWithValue("@apellido", p.apellido);
-                    cmd.Parameters.AddWithValue("@direccion", p.direccion);
-                    cmd.Parameters.AddWithValue("@telefono", p.telefono);
-                    cmd.Parameters.AddWithValue("@mail", p.mail);
-                    cmd.Parameters.AddWithValue("@dni", p.DNI);
-
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Paciente agregado correctamente.", "Éxito");
-                    LimpiarCampos();
-
-                    dgvPacientes.DataSource = gestorPacientes.CargarDatos();
-                    EstiloDgvPacientes.AplicarEstilo(dgvPacientes);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al agregar paciente: " + ex.Message, "Error");
+                MessageBox.Show("Paciente agregado correctamente.", "Éxito");
+                LimpiarCampos();
+                await CargarDatosDesdeApiAsync();
             }
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        private async void btnModificar_Click(object sender, EventArgs e)
         {
-
             if (dgvPacientes.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Por favor, selecciona un paciente para modificar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-
+            // Obtiene el ID del paciente seleccionado
             int id = Convert.ToInt32(dgvPacientes.SelectedRows[0].Cells["id"].Value);
 
- 
             Paciente p = new Paciente
             {
                 nombre = txtNombrePaciente.Text,
@@ -282,17 +234,16 @@ namespace Eldecos
                 direccion = txtDireccionPaciente.Text,
                 telefono = txtTelefonoPaciente.Text,
                 mail = txtMailPaciente.Text,
-                DNI = txtDni.Text
+                // CORREGIDO: Usar 'dni' en minúsculas
+                dni = txtDni.Text
             };
 
-  
             if (!p.CamposVacios())
             {
                 MessageBox.Show("Por favor, complete todos los campos antes de continuar.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-         
             DialogResult confirmacion = MessageBox.Show(
                 "¿Estás seguro que deseas modificar este paciente?",
                 "Confirmar modificación",
@@ -302,40 +253,11 @@ namespace Eldecos
 
             if (confirmacion == DialogResult.Yes)
             {
-                try
+                bool modificado = await gestorPacientes.ModificarPacienteAsync(id, p);
+                if (modificado)
                 {
-                    using (var conexion = ConexionSQLite.ObtenerConexion())
-                    {
-                        conexion.Open();
-                        string query = "UPDATE pacientes SET pnombre = @nombre, papellido = @apellido, pdireccion = @direccion, " +
-                                       "ptelefono = @telefono, pmail = @mail, pdni = @dni WHERE id = @id";
-
-                        SQLiteCommand cmd = new SQLiteCommand(query, conexion);
-                        cmd.Parameters.AddWithValue("@nombre", p.nombre);
-                        cmd.Parameters.AddWithValue("@apellido", p.apellido);
-                        cmd.Parameters.AddWithValue("@direccion", p.direccion);
-                        cmd.Parameters.AddWithValue("@telefono", p.telefono);
-                        cmd.Parameters.AddWithValue("@mail", p.mail);
-                        cmd.Parameters.AddWithValue("@dni", p.DNI);
-                        cmd.Parameters.AddWithValue("@id", id);
-
-                        int rowsAffected = cmd.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show("Paciente modificado correctamente.");
-                            dgvPacientes.DataSource = gestorPacientes.CargarDatos();
-                            EstiloDgvPacientes.AplicarEstilo(dgvPacientes);
-                            LimpiarCampos();
-                        }
-
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al modificar paciente: " + ex.Message, "Error");
-                    dgvPacientes.DataSource = gestorPacientes.CargarDatos();
-                    EstiloDgvPacientes.AplicarEstilo(dgvPacientes);
+                    MessageBox.Show("Paciente modificado correctamente.");
+                    await CargarDatosDesdeApiAsync();
                     LimpiarCampos();
                 }
             }
@@ -353,5 +275,4 @@ namespace Eldecos
             CargarDias();
         }
     }
-    }
-    
+}

@@ -71,6 +71,8 @@ namespace Eldecos
             this.txtApellidoPaciente = new System.Windows.Forms.TextBox();
             this.txtNombrePaciente = new System.Windows.Forms.TextBox();
             this.tbMedicos = new System.Windows.Forms.TabPage();
+            this.lblMedicos = new System.Windows.Forms.Label();
+            this.dgvMedicos = new System.Windows.Forms.DataGridView();
             this.tbNum = new System.Windows.Forms.TabPage();
             this.pnlOpciones.SuspendLayout();
             this.pnlApp.SuspendLayout();
@@ -79,6 +81,8 @@ namespace Eldecos
             this.tbTurnos.SuspendLayout();
             this.tbFichas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
+            this.tbMedicos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicos)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlOpciones
@@ -553,11 +557,31 @@ namespace Eldecos
             // 
             // tbMedicos
             // 
+            this.tbMedicos.Controls.Add(this.lblMedicos);
+            this.tbMedicos.Controls.Add(this.dgvMedicos);
             this.tbMedicos.Location = new System.Drawing.Point(4, 25);
             this.tbMedicos.Name = "tbMedicos";
             this.tbMedicos.Size = new System.Drawing.Size(1175, 852);
             this.tbMedicos.TabIndex = 2;
             this.tbMedicos.UseVisualStyleBackColor = true;
+            // 
+            // lblMedicos
+            // 
+            this.lblMedicos.AutoSize = true;
+            this.lblMedicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMedicos.Location = new System.Drawing.Point(286, 99);
+            this.lblMedicos.Name = "lblMedicos";
+            this.lblMedicos.Size = new System.Drawing.Size(603, 73);
+            this.lblMedicos.TabIndex = 1;
+            this.lblMedicos.Text = "Listado de Médicos";
+            // 
+            // dgvMedicos
+            // 
+            this.dgvMedicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMedicos.Location = new System.Drawing.Point(306, 199);
+            this.dgvMedicos.Name = "dgvMedicos";
+            this.dgvMedicos.Size = new System.Drawing.Size(563, 270);
+            this.dgvMedicos.TabIndex = 0;
             // 
             // tbNum
             // 
@@ -588,6 +612,9 @@ namespace Eldecos
             this.tbFichas.ResumeLayout(false);
             this.tbFichas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).EndInit();
+            this.tbMedicos.ResumeLayout(false);
+            this.tbMedicos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -647,5 +674,7 @@ namespace Eldecos
         private System.Windows.Forms.Button btnSiguiente;
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Label lblMes;
+        private System.Windows.Forms.DataGridView dgvMedicos;
+        private System.Windows.Forms.Label lblMedicos;
     }
 }

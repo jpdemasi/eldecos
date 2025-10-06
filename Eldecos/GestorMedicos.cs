@@ -8,12 +8,12 @@ using Newtonsoft.Json;
 
 namespace Eldecos
 {
-    public class GestorPacientes
+    public class GestorMedicos
     {
         private readonly HttpClient _httpClient;
-        private const string BaseUrl = "https://api-eldecos.onrender.com/pacientes";
+        private const string BaseUrl = "https://api-eldecos.onrender.com/medicos";
 
-        public GestorPacientes()
+        public GestorMedicos()
         {
             _httpClient = new HttpClient();
         }
@@ -26,18 +26,18 @@ namespace Eldecos
                 response.EnsureSuccessStatusCode();
 
                 var jsonResponse = await response.Content.ReadAsStringAsync();
-                var pacientes = JsonConvert.DeserializeObject<DataTable>(jsonResponse);
+                var medicos = JsonConvert.DeserializeObject<DataTable>(jsonResponse);
 
-                return pacientes;
+                return medicos;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar los datos desde la API: " + ex.Message, "Error");
+                MessageBox.Show("Error al cargar los médicos desde la API: " + ex.Message, "Error");
                 return null;
             }
         }
 
-        public async Task<DataTable> BuscarPacientesAsync(string searchText)
+        public async Task<DataTable> BuscarMedicosAsync(string searchText)
         {
             try
             {
@@ -45,18 +45,18 @@ namespace Eldecos
                 response.EnsureSuccessStatusCode();
 
                 var jsonResponse = await response.Content.ReadAsStringAsync();
-                var pacientes = JsonConvert.DeserializeObject<DataTable>(jsonResponse);
+                var medicos = JsonConvert.DeserializeObject<DataTable>(jsonResponse);
 
-                return pacientes;
+                return medicos;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al buscar los datos en la API: " + ex.Message, "Error");
+                MessageBox.Show("Error al buscar médicos en la API: " + ex.Message, "Error");
                 return null;
             }
         }
 
-        public async Task<bool> EliminarPacientePorIdAsync(int id)
+        public async Task<bool> EliminarMedicoPorIdAsync(int id)
         {
             try
             {
@@ -67,16 +67,16 @@ namespace Eldecos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al eliminar el paciente en la API: " + ex.Message, "Error");
+                MessageBox.Show("Error al eliminar médico en la API: " + ex.Message, "Error");
                 return false;
             }
         }
 
-        public async Task<bool> AgregarPacienteAsync(Paciente p)
+        public async Task<bool> AgregarMedicoAsync(Medico m)
         {
             try
             {
-                var jsonContent = JsonConvert.SerializeObject(p);
+                var jsonContent = JsonConvert.SerializeObject(m);
                 var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
                 var response = await _httpClient.PostAsync(BaseUrl, content);
@@ -86,16 +86,16 @@ namespace Eldecos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al agregar paciente a la API: " + ex.Message, "Error");
+                MessageBox.Show("Error al agregar médico a la API: " + ex.Message, "Error");
                 return false;
             }
         }
 
-        public async Task<bool> ModificarPacienteAsync(int id, Paciente p)
+        public async Task<bool> ModificarMedicoAsync(int id, Medico m)
         {
             try
             {
-                var jsonContent = JsonConvert.SerializeObject(p);
+                var jsonContent = JsonConvert.SerializeObject(m);
                 var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
                 var response = await _httpClient.PutAsync($"{BaseUrl}/{id}", content);
@@ -105,7 +105,7 @@ namespace Eldecos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al modificar paciente en la API: " + ex.Message, "Error");
+                MessageBox.Show("Error al modificar médico en la API: " + ex.Message, "Error");
                 return false;
             }
         }
