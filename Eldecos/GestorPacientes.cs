@@ -1,113 +1,113 @@
-﻿using System;
-using System.Data;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Newtonsoft.Json;
+﻿    using System;
+    using System.Data;
+    using System.Net.Http;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Forms;
+    using Newtonsoft.Json;
 
-namespace Eldecos
-{
-    public class GestorPacientes
+    namespace Eldecos
     {
-        private readonly HttpClient _httpClient;
-        private const string BaseUrl = "https://api-eldecos.onrender.com/pacientes";
-
-        public GestorPacientes()
+        public class GestorPacientes
         {
-            _httpClient = new HttpClient();
-        }
+            private readonly HttpClient _httpClient;
+            private const string BaseUrl = "https://api-eldecos.onrender.com/pacientes";
 
-        public async Task<DataTable> CargarDatosAsync()
-        {
-            try
+            public GestorPacientes()
             {
-                var response = await _httpClient.GetAsync(BaseUrl);
-                response.EnsureSuccessStatusCode();
-
-                var jsonResponse = await response.Content.ReadAsStringAsync();
-                var pacientes = JsonConvert.DeserializeObject<DataTable>(jsonResponse);
-
-                return pacientes;
+                _httpClient = new HttpClient();
             }
-            catch (Exception ex)
+
+            public async Task<DataTable> CargarDatosAsync()
             {
-                MessageBox.Show("Error al cargar los datos desde la API: " + ex.Message, "Error");
-                return null;
+                try
+                {
+                    var response = await _httpClient.GetAsync(BaseUrl);
+                    response.EnsureSuccessStatusCode();
+
+                    var jsonResponse = await response.Content.ReadAsStringAsync();
+                    var pacientes = JsonConvert.DeserializeObject<DataTable>(jsonResponse);
+
+                    return pacientes;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar los datos desde la API: " + ex.Message, "Error");
+                    return null;
+                }
             }
-        }
 
-        public async Task<DataTable> BuscarPacientesAsync(string searchText)
-        {
-            try
+            public async Task<DataTable> BuscarPacientesAsync(string searchText)
             {
-                var response = await _httpClient.GetAsync($"{BaseUrl}/buscar?q={searchText}");
-                response.EnsureSuccessStatusCode();
+                try
+                {
+                    var response = await _httpClient.GetAsync($"{BaseUrl}/buscar?q={searchText}");
+                    response.EnsureSuccessStatusCode();
 
-                var jsonResponse = await response.Content.ReadAsStringAsync();
-                var pacientes = JsonConvert.DeserializeObject<DataTable>(jsonResponse);
+                    var jsonResponse = await response.Content.ReadAsStringAsync();
+                    var pacientes = JsonConvert.DeserializeObject<DataTable>(jsonResponse);
 
-                return pacientes;
+                    return pacientes;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al buscar los datos en la API: " + ex.Message, "Error");
+                    return null;
+                }
             }
-            catch (Exception ex)
+
+            public async Task<bool> EliminarPacientePorIdAsync(int id)
             {
-                MessageBox.Show("Error al buscar los datos en la API: " + ex.Message, "Error");
-                return null;
+                try
+                {
+                    var response = await _httpClient.DeleteAsync($"{BaseUrl}/{id}");
+                    response.EnsureSuccessStatusCode();
+
+                    return response.IsSuccessStatusCode;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar el paciente en la API: " + ex.Message, "Error");
+                    return false;
+                }
             }
-        }
 
-        public async Task<bool> EliminarPacientePorIdAsync(int id)
-        {
-            try
+            public async Task<bool> AgregarPacienteAsync(Paciente p)
             {
-                var response = await _httpClient.DeleteAsync($"{BaseUrl}/{id}");
-                response.EnsureSuccessStatusCode();
+                try
+                {
+                    var jsonContent = JsonConvert.SerializeObject(p);
+                    var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
-                return response.IsSuccessStatusCode;
+                    var response = await _httpClient.PostAsync(BaseUrl, content);
+                    response.EnsureSuccessStatusCode();
+
+                    return response.IsSuccessStatusCode;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al agregar paciente a la API: " + ex.Message, "Error");
+                    return false;
+                }
             }
-            catch (Exception ex)
+
+            public async Task<bool> ModificarPacienteAsync(int id, Paciente p)
             {
-                MessageBox.Show("Error al eliminar el paciente en la API: " + ex.Message, "Error");
-                return false;
-            }
-        }
+                try
+                {
+                    var jsonContent = JsonConvert.SerializeObject(p);
+                    var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
-        public async Task<bool> AgregarPacienteAsync(Paciente p)
-        {
-            try
-            {
-                var jsonContent = JsonConvert.SerializeObject(p);
-                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+                    var response = await _httpClient.PutAsync($"{BaseUrl}/{id}", content);
+                    response.EnsureSuccessStatusCode();
 
-                var response = await _httpClient.PostAsync(BaseUrl, content);
-                response.EnsureSuccessStatusCode();
-
-                return response.IsSuccessStatusCode;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al agregar paciente a la API: " + ex.Message, "Error");
-                return false;
-            }
-        }
-
-        public async Task<bool> ModificarPacienteAsync(int id, Paciente p)
-        {
-            try
-            {
-                var jsonContent = JsonConvert.SerializeObject(p);
-                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
-
-                var response = await _httpClient.PutAsync($"{BaseUrl}/{id}", content);
-                response.EnsureSuccessStatusCode();
-
-                return response.IsSuccessStatusCode;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al modificar paciente en la API: " + ex.Message, "Error");
-                return false;
+                    return response.IsSuccessStatusCode;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al modificar paciente en la API: " + ex.Message, "Error");
+                    return false;
+                }
             }
         }
     }
-}

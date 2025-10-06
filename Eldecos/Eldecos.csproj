@@ -64,6 +64,7 @@
     <Compile Include="DbConnection.cs" />
     <Compile Include="EstiloDgvMedicos.cs" />
     <Compile Include="EstiloDgvPacientes.cs" />
+    <Compile Include="EstiloDgvTurnos.cs" />
     <Compile Include="FormGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,8 +87,15 @@
     <Compile Include="FormTurno.Designer.cs">
       <DependentUpon>FormTurno.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTurnosDelDia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTurnosDelDia.Designer.cs">
+      <DependentUpon>FormTurnosDelDia.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestorMedicos.cs" />
     <Compile Include="GestorPacientes.cs" />
+    <Compile Include="GestorTurnos.cs" />
     <Compile Include="Medico.cs" />
     <Compile Include="Paciente.cs" />
     <Compile Include="Program.cs" />
@@ -95,6 +103,7 @@
     <Compile Include="TabControlSinTabs.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Turno.cs" />
     <EmbeddedResource Include="ControlDia.resx">
       <DependentUpon>ControlDia.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTurno.resx">
       <DependentUpon>FormTurno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTurnosDelDia.resx">
+      <DependentUpon>FormTurnosDelDia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

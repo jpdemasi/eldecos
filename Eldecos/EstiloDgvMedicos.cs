@@ -7,10 +7,10 @@ namespace Eldecos
     {
         public static void AplicarEstilo(DataGridView dgvMedicos)
         {
-            // Ocultar la columna 'id' que no es relevante para el usuario
+            
             dgvMedicos.Columns["id"].Visible = false;
 
-            // Cambiar los nombres de las columnas para que sean más legibles
+            
             dgvMedicos.Columns["nombre"].HeaderText = "Nombre";
             dgvMedicos.Columns["apellido"].HeaderText = "Apellido";
             dgvMedicos.Columns["dni"].HeaderText = "DNI";

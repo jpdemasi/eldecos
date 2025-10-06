@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|c:\\users\\nuwanda\\documents\\github\\eldecos\\eldecos\\gestormedicos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\gestormedicos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|c:\\users\\nuwanda\\documents\\github\\eldecos\\eldecos\\formturnosdeldia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\formturnosdeldia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|c:\\users\\nuwanda\\documents\\github\\eldecos\\eldecos\\formturnosdeldia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\formturnosdeldia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|c:\\users\\nuwanda\\documents\\github\\eldecos\\eldecos\\controldia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\controldia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|c:\\users\\nuwanda\\documents\\github\\eldecos\\eldecos\\controldia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\controldia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\eldecos\\formgestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,16 +27,16 @@
       "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\formgestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\eldecos\\gestorpacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\gestorpacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|c:\\users\\nuwanda\\documents\\github\\eldecos\\eldecos\\gestorturnos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\gestorturnos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\eldecos\\medico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\medico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\eldecos\\estilodgvmedicos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|c:\\users\\nuwanda\\documents\\github\\eldecos\\eldecos\\estilodgvmedicos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\estilodgvmedicos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|c:\\users\\nuwanda\\documents\\github\\eldecos\\eldecos\\estilodgvturnos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7419D5B9-85BB-4A15-A2C8-01198A2CD258}|Eldecos\\Eldecos.csproj|solutionrelative:eldecos\\estilodgvturnos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,75 +54,117 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EstiloDgvMedicos.cs",
-              "DocumentMoniker": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\EstiloDgvMedicos.cs",
-              "RelativeDocumentMoniker": "Eldecos\\EstiloDgvMedicos.cs",
-              "ToolTip": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\EstiloDgvMedicos.cs",
-              "RelativeToolTip": "Eldecos\\EstiloDgvMedicos.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAABMAAAA+AAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "GestorTurnos.cs",
+              "DocumentMoniker": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\GestorTurnos.cs",
+              "RelativeDocumentMoniker": "Eldecos\\GestorTurnos.cs",
+              "ToolTip": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\GestorTurnos.cs",
+              "RelativeToolTip": "Eldecos\\GestorTurnos.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAAAGsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-04T20:42:28.807Z"
+              "WhenOpened": "2025-10-06T23:41:47.783Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormGestion.cs",
-              "DocumentMoniker": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\FormGestion.cs",
-              "RelativeDocumentMoniker": "Eldecos\\FormGestion.cs",
-              "ToolTip": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\FormGestion.cs",
-              "RelativeToolTip": "Eldecos\\FormGestion.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAgAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ControlDia.cs",
+              "DocumentMoniker": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\ControlDia.cs",
+              "RelativeDocumentMoniker": "Eldecos\\ControlDia.cs",
+              "ToolTip": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\ControlDia.cs",
+              "RelativeToolTip": "Eldecos\\ControlDia.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAADUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-04T20:37:35.576Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Medico.cs",
-              "DocumentMoniker": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\Medico.cs",
-              "RelativeDocumentMoniker": "Eldecos\\Medico.cs",
-              "ToolTip": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\Medico.cs",
-              "RelativeToolTip": "Eldecos\\Medico.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-04T20:32:50.345Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GestorMedicos.cs",
-              "DocumentMoniker": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\GestorMedicos.cs",
-              "RelativeDocumentMoniker": "Eldecos\\GestorMedicos.cs",
-              "ToolTip": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\GestorMedicos.cs",
-              "RelativeToolTip": "Eldecos\\GestorMedicos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-04T20:32:28.816Z",
+              "WhenOpened": "2025-10-06T23:29:22.495Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "GestorPacientes.cs",
-              "DocumentMoniker": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\GestorPacientes.cs",
-              "RelativeDocumentMoniker": "Eldecos\\GestorPacientes.cs",
-              "ToolTip": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\GestorPacientes.cs",
-              "RelativeToolTip": "Eldecos\\GestorPacientes.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGIAAAAdAAAAAAAAAA==",
+              "Title": "ControlDia.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\ControlDia.cs",
+              "RelativeDocumentMoniker": "Eldecos\\ControlDia.cs",
+              "ToolTip": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\ControlDia.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Eldecos\\ControlDia.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-04T20:31:12.886Z"
+              "WhenOpened": "2025-10-06T23:29:18.999Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
+              "Title": "EstiloDgvTurnos.cs",
+              "DocumentMoniker": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\EstiloDgvTurnos.cs",
+              "RelativeDocumentMoniker": "Eldecos\\EstiloDgvTurnos.cs",
+              "ToolTip": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\EstiloDgvTurnos.cs",
+              "RelativeToolTip": "Eldecos\\EstiloDgvTurnos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T23:26:58.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormTurnosDelDia.cs",
+              "DocumentMoniker": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\FormTurnosDelDia.cs",
+              "RelativeDocumentMoniker": "Eldecos\\FormTurnosDelDia.cs",
+              "ToolTip": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\FormTurnosDelDia.cs",
+              "RelativeToolTip": "Eldecos\\FormTurnosDelDia.cs",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAcwLIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T23:21:04.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormTurnosDelDia.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\FormTurnosDelDia.cs",
+              "RelativeDocumentMoniker": "Eldecos\\FormTurnosDelDia.cs",
+              "ToolTip": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\FormTurnosDelDia.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Eldecos\\FormTurnosDelDia.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T23:21:02.526Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EstiloDgvMedicos.cs",
+              "DocumentMoniker": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\EstiloDgvMedicos.cs",
+              "RelativeDocumentMoniker": "Eldecos\\EstiloDgvMedicos.cs",
+              "ToolTip": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\EstiloDgvMedicos.cs",
+              "RelativeToolTip": "Eldecos\\EstiloDgvMedicos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-04T20:42:28.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormGestion.cs",
+              "DocumentMoniker": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\FormGestion.cs",
+              "RelativeDocumentMoniker": "Eldecos\\FormGestion.cs",
+              "ToolTip": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\FormGestion.cs",
+              "RelativeToolTip": "Eldecos\\FormGestion.cs",
+              "ViewState": "AgIAACwBAAAAAAAAAAA1wDIBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-04T20:37:35.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "FormGestion.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\FormGestion.cs",
               "RelativeDocumentMoniker": "Eldecos\\FormGestion.cs",
-              "ToolTip": "C:\\Users\\Nuwanda\\Desktop\\eldecos\\Eldecos\\FormGestion.cs [Dise\u00F1o]",
-              "RelativeToolTip": "..\\..\\..\\Desktop\\eldecos\\Eldecos\\FormGestion.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\Nuwanda\\Documents\\GitHub\\eldecos\\Eldecos\\FormGestion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Eldecos\\FormGestion.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T16:25:58.769Z"
+              "WhenOpened": "2025-09-18T16:25:58.769Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

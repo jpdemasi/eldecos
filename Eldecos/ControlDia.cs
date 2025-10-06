@@ -13,10 +13,22 @@ namespace Eldecos
     public partial class ControlDia : UserControl
     {
         public DateTime Fecha { get; private set; }
+        private int cantidadTurnos;
 
-        public void SetDia(int dia, DateTime fechaBase)
+        public ControlDia()
         {
+            InitializeComponent();
+            // Suscribe el evento Click una sola vez en el constructor.
+            this.Click += ControlDia_Click;
+            foreach (Control c in this.Controls)
+            {
+                c.Click += ControlDia_Click;
+            }
+        }
 
+        public void SetDia(int dia, DateTime fechaBase, int turnosDelDia)
+        {
+            this.cantidadTurnos = turnosDelDia;
 
             if (dia == 0)
             {
@@ -26,29 +38,33 @@ namespace Eldecos
 
             Fecha = new DateTime(fechaBase.Year, fechaBase.Month, dia);
             lblDia.Text = dia.ToString();
+            this.Visible = true;
 
-            this.Click += ControlDia_Click;
-            foreach (Control c in this.Controls)
+            if (turnosDelDia > 0)
             {
-                c.Click += ControlDia_Click;
+                this.BackColor = Color.FromArgb(173, 216, 230); // Azul claro: hay turnos
             }
-
-            lblDia.Click += ControlDia_Click;
-
-
-
-        }
-
-        public ControlDia()
-        {
-            InitializeComponent(); 
+            else
+            {
+                this.BackColor = Color.FromArgb(220, 220, 220); // Gris claro: sin turnos
+            }
         }
 
         private void ControlDia_Click(object sender, EventArgs e)
         {
-            FormTurno formTurno = new FormTurno(Fecha);
-            formTurno.ShowDialog();
+            if (this.Visible)
+            {
+                if (cantidadTurnos > 0)
+                {
+                    // Se crea una instancia del nuevo formulario, pasándole la fecha.
+                    FormTurnosDelDia formTurnos = new FormTurnosDelDia(Fecha);
+                    formTurnos.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("No hay turnos agendados para este día.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
-
 }

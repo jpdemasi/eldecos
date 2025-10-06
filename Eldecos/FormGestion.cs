@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MiProyecto.ControlesPersonalizados; // Asegúrate de que este namespace sea accesible
+using Eldecos;
 using System.Net;
 using System.Globalization;
 using System.Net.Http;
@@ -19,19 +19,24 @@ namespace Eldecos
     {
         private GestorPacientes gestorPacientes;
         private GestorMedicos gestorMedicos;
+        private GestorTurnos gestorTurnos;
         private DateTime fechaActual;
 
         public FormGestion()
         {
             InitializeComponent();
             fechaActual = DateTime.Now;
-            CargarDias();
+
+            // 1. Inicializa todos los gestores primero.
             gestorPacientes = new GestorPacientes();
             gestorMedicos = new GestorMedicos();
+            gestorTurnos = new GestorTurnos();
+
             dgvPacientes.CellClick += dgvPacientes_CellClick;
 
-            // Inicia la carga de datos de forma asíncrona al iniciar
+            // 2. Ahora, puedes llamar a los métodos que usan los gestores.
             CargarDatosDesdeApiAsync();
+            CargarDias();
 
             tbRecepcion.SelectedIndex = 0;
         }
@@ -63,10 +68,10 @@ namespace Eldecos
 
         private void FormGestion_Load(object sender, EventArgs e)
         {
-            // Lógica de carga eliminada de aquí, ahora está en CargarDatosDesdeApiAsync()
+
         }
 
-        private void CargarDias()
+        private async void CargarDias()
         {
             flpDias.Controls.Clear();
             DateTime primerDia = new DateTime(fechaActual.Year, fechaActual.Month, 1);
@@ -76,16 +81,45 @@ namespace Eldecos
 
             lblMes.Text = fechaActual.ToString("MMMM yyyy", new CultureInfo("es-ES")).ToUpper();
 
+            // NUEVA LÓGICA: Carga todos los turnos del mes en una sola llamada.
+            DateTime ultimoDia = new DateTime(fechaActual.Year, fechaActual.Month, diasEnMes);
+            DataTable turnosDelMes = await gestorTurnos.ObtenerTurnosPorRangoAsync(
+                primerDia.ToString("yyyy-MM-dd"), ultimoDia.ToString("yyyy-MM-dd")
+            );
+
+            // Crea un diccionario para contar los turnos por día.
+            var turnosPorDia = new Dictionary<int, int>();
+            if (turnosDelMes != null)
+            {
+                foreach (DataRow row in turnosDelMes.Rows)
+                {
+                    if (DateTime.TryParse(row["fecha"].ToString(), out DateTime fechaTurno))
+                    {
+                        int dia = fechaTurno.Day;
+                        if (turnosPorDia.ContainsKey(dia))
+                        {
+                            turnosPorDia[dia]++;
+                        }
+                        else
+                        {
+                            turnosPorDia[dia] = 1;
+                        }
+                    }
+                }
+            }
+
             for (int i = 0; i < diaSemana; i++)
             {
                 ControlDia cd = new ControlDia();
-                cd.SetDia(0, fechaActual);
+                cd.SetDia(0, fechaActual, 0);
                 flpDias.Controls.Add(cd);
             }
+
             for (int dia = 1; dia <= diasEnMes; dia++)
             {
                 ControlDia cd = new ControlDia();
-                cd.SetDia(dia, fechaActual);
+                int cantidadTurnos = turnosPorDia.ContainsKey(dia) ? turnosPorDia[dia] : 0;
+                cd.SetDia(dia, fechaActual, cantidadTurnos);
                 flpDias.Controls.Add(cd);
             }
         }
@@ -98,7 +132,7 @@ namespace Eldecos
         private async void btnCargarPacientes_Click(object sender, EventArgs e)
         {
             tbRecepcion.SelectedIndex = 1;
-            // Corregido: Ahora se puede usar await porque CargarDatosDesdeApiAsync devuelve Task
+
             await CargarDatosDesdeApiAsync();
         }
 
@@ -141,7 +175,6 @@ namespace Eldecos
         {
             if (dgvPacientes.SelectedRows.Count > 0)
             {
-                // La columna 'id' debe existir en el DataGridView
                 int id = Convert.ToInt32(dgvPacientes.SelectedRows[0].Cells["id"].Value);
 
                 DialogResult confirmacion = MessageBox.Show(
@@ -180,7 +213,6 @@ namespace Eldecos
 
                 txtNombrePaciente.Text = filaSeleccionada.Cells["pnombre"].Value?.ToString() ?? "";
                 txtApellidoPaciente.Text = filaSeleccionada.Cells["papellido"].Value?.ToString() ?? "";
-                // La API devuelve 'pdni' pero lo asignamos a txtDni
                 txtDni.Text = filaSeleccionada.Cells["pdni"].Value?.ToString() ?? "";
                 txtTelefonoPaciente.Text = filaSeleccionada.Cells["ptelefono"].Value?.ToString() ?? "";
                 txtDireccionPaciente.Text = filaSeleccionada.Cells["pdireccion"].Value?.ToString() ?? "";
@@ -197,7 +229,6 @@ namespace Eldecos
                 direccion = txtDireccionPaciente.Text,
                 telefono = txtTelefonoPaciente.Text,
                 mail = txtMailPaciente.Text,
-                // CORREGIDO: Usar 'dni' en minúsculas
                 dni = txtDni.Text
             };
 
@@ -224,7 +255,6 @@ namespace Eldecos
                 return;
             }
 
-            // Obtiene el ID del paciente seleccionado
             int id = Convert.ToInt32(dgvPacientes.SelectedRows[0].Cells["id"].Value);
 
             Paciente p = new Paciente
@@ -234,7 +264,6 @@ namespace Eldecos
                 direccion = txtDireccionPaciente.Text,
                 telefono = txtTelefonoPaciente.Text,
                 mail = txtMailPaciente.Text,
-                // CORREGIDO: Usar 'dni' en minúsculas
                 dni = txtDni.Text
             };
 

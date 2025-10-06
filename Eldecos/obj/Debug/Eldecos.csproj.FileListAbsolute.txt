@@ -20,7 +20,6 @@ C:\Users\Nuwanda\Documents\GitHub\eldecos\Eldecos\bin\Debug\System.Data.SQLite.d
 C:\Users\Nuwanda\Documents\GitHub\eldecos\Eldecos\bin\Debug\System.Data.SQLite.xml
 C:\Users\Nuwanda\Documents\GitHub\eldecos\Eldecos\obj\Debug\Eldecos.csproj.AssemblyReference.cache
 C:\Users\Nuwanda\Documents\GitHub\eldecos\Eldecos\obj\Debug\Eldecos.FormGestion.resources
-C:\Users\Nuwanda\Documents\GitHub\eldecos\Eldecos\obj\Debug\Eldecos.FormLogin.resources
 C:\Users\Nuwanda\Documents\GitHub\eldecos\Eldecos\obj\Debug\Eldecos.FormMain.resources
 C:\Users\Nuwanda\Documents\GitHub\eldecos\Eldecos\obj\Debug\Eldecos.Properties.Resources.resources
 C:\Users\Nuwanda\Documents\GitHub\eldecos\Eldecos\obj\Debug\Eldecos.csproj.GenerateResource.cache
@@ -49,3 +48,7 @@ C:\Users\Nuwanda\Desktop\eldecos\Eldecos\obj\Debug\Eldecos.csproj.Up2Date
 C:\Users\Nuwanda\Desktop\eldecos\Eldecos\obj\Debug\Eldecos.exe
 C:\Users\Nuwanda\Desktop\eldecos\Eldecos\obj\Debug\Eldecos.pdb
 C:\Users\Nuwanda\Desktop\eldecos\Eldecos\obj\Debug\Eldecos.LoginRequest.resources
+C:\Users\Nuwanda\Documents\GitHub\eldecos\Eldecos\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Nuwanda\Documents\GitHub\eldecos\Eldecos\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Nuwanda\Documents\GitHub\eldecos\Eldecos\obj\Debug\Eldecos.LoginRequest.resources
+C:\Users\Nuwanda\Documents\GitHub\eldecos\Eldecos\obj\Debug\Eldecos.FormTurnosDelDia.resources
