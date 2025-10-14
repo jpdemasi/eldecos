@@ -54,16 +54,19 @@ namespace Eldecos
         {
             if (this.Visible)
             {
-                if (cantidadTurnos > 0)
+                // 1. Mostrar la fecha seleccionada para depuración.
+                MessageBox.Show($"Día seleccionado: {this.Fecha.ToShortDateString()}", "Día Seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // 2. Validar si el día es sábado o domingo.
+                if (Fecha.DayOfWeek == DayOfWeek.Saturday || Fecha.DayOfWeek == DayOfWeek.Sunday)
                 {
-                    // Se crea una instancia del nuevo formulario, pasándole la fecha.
-                    FormTurnosDelDia formTurnos = new FormTurnosDelDia(Fecha);
-                    formTurnos.ShowDialog();
+                    MessageBox.Show("No se pueden agendar turnos los sábados ni los domingos.", "Día no disponible", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Detiene la ejecución para no abrir el formulario.
                 }
-                else
-                {
-                    MessageBox.Show("No hay turnos agendados para este día.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+
+                // 3. Si es un día hábil, se procede a abrir el formulario de turnos.
+                FormTurnosDelDia formTurnos = new FormTurnosDelDia(Fecha);
+                formTurnos.ShowDialog();
             }
         }
     }

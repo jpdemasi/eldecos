@@ -20,23 +20,28 @@ namespace Eldecos
         private GestorPacientes gestorPacientes;
         private GestorMedicos gestorMedicos;
         private GestorTurnos gestorTurnos;
-        private DateTime fechaActual;
+
+        // Se elimina la variable 'fechaActual' ya que no se usa para el calendario.
+        // private DateTime fechaActual; 
 
         public FormGestion()
         {
             InitializeComponent();
-            fechaActual = DateTime.Now;
+            // Se elimina la inicialización de 'fechaActual'.
+            // fechaActual = DateTime.Now;
 
             // 1. Inicializa todos los gestores primero.
             gestorPacientes = new GestorPacientes();
             gestorMedicos = new GestorMedicos();
-            gestorTurnos = new GestorTurnos();
+            // Se elimina la inicialización de 'gestorTurnos'.
+            // gestorTurnos = new GestorTurnos();
 
             dgvPacientes.CellClick += dgvPacientes_CellClick;
 
             // 2. Ahora, puedes llamar a los métodos que usan los gestores.
             CargarDatosDesdeApiAsync();
-            CargarDias();
+            // Se elimina la llamada a 'CargarDias()'.
+            // CargarDias();
 
             tbRecepcion.SelectedIndex = 0;
         }
@@ -71,58 +76,9 @@ namespace Eldecos
 
         }
 
-        private async void CargarDias()
-        {
-            flpDias.Controls.Clear();
-            DateTime primerDia = new DateTime(fechaActual.Year, fechaActual.Month, 1);
-            int diasEnMes = DateTime.DaysInMonth(fechaActual.Year, fechaActual.Month);
-            int diaSemana = (int)primerDia.DayOfWeek;
-            diaSemana = diaSemana == 0 ? 6 : diaSemana - 1;
-
-            lblMes.Text = fechaActual.ToString("MMMM yyyy", new CultureInfo("es-ES")).ToUpper();
-
-            // NUEVA LÓGICA: Carga todos los turnos del mes en una sola llamada.
-            DateTime ultimoDia = new DateTime(fechaActual.Year, fechaActual.Month, diasEnMes);
-            DataTable turnosDelMes = await gestorTurnos.ObtenerTurnosPorRangoAsync(
-                primerDia.ToString("yyyy-MM-dd"), ultimoDia.ToString("yyyy-MM-dd")
-            );
-
-            // Crea un diccionario para contar los turnos por día.
-            var turnosPorDia = new Dictionary<int, int>();
-            if (turnosDelMes != null)
-            {
-                foreach (DataRow row in turnosDelMes.Rows)
-                {
-                    if (DateTime.TryParse(row["fecha"].ToString(), out DateTime fechaTurno))
-                    {
-                        int dia = fechaTurno.Day;
-                        if (turnosPorDia.ContainsKey(dia))
-                        {
-                            turnosPorDia[dia]++;
-                        }
-                        else
-                        {
-                            turnosPorDia[dia] = 1;
-                        }
-                    }
-                }
-            }
-
-            for (int i = 0; i < diaSemana; i++)
-            {
-                ControlDia cd = new ControlDia();
-                cd.SetDia(0, fechaActual, 0);
-                flpDias.Controls.Add(cd);
-            }
-
-            for (int dia = 1; dia <= diasEnMes; dia++)
-            {
-                ControlDia cd = new ControlDia();
-                int cantidadTurnos = turnosPorDia.ContainsKey(dia) ? turnosPorDia[dia] : 0;
-                cd.SetDia(dia, fechaActual, cantidadTurnos);
-                flpDias.Controls.Add(cd);
-            }
-        }
+        // Se elimina el método 'CargarDias()'.
+        // private async void CargarDias()
+        // { ... }
 
         private void btnTurnos_Click(object sender, EventArgs e)
         {
@@ -292,16 +248,10 @@ namespace Eldecos
             }
         }
 
-        private void btnAnterior_Click(object sender, EventArgs e)
+        private void btnCrearTurno_Click(object sender, EventArgs e)
         {
-            fechaActual = fechaActual.AddMonths(-1);
-            CargarDias();
-        }
-
-        private void btnSiguiente_Click(object sender, EventArgs e)
-        {
-            fechaActual = fechaActual.AddMonths(1);
-            CargarDias();
+            FormTurnosDelDia formTurnos = new FormTurnosDelDia(new DateTime());
+            formTurnos.ShowDialog();
         }
     }
 }

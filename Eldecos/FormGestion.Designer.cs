@@ -38,17 +38,6 @@ namespace Eldecos
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbRecepcion = new MiProyecto.ControlesPersonalizados.TabControlSinTabs();
             this.tbTurnos = new System.Windows.Forms.TabPage();
-            this.lblMes = new System.Windows.Forms.Label();
-            this.btnSiguiente = new System.Windows.Forms.Button();
-            this.btnAnterior = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.flpDias = new System.Windows.Forms.FlowLayoutPanel();
             this.tbFichas = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -74,6 +63,11 @@ namespace Eldecos
             this.lblMedicos = new System.Windows.Forms.Label();
             this.dgvMedicos = new System.Windows.Forms.DataGridView();
             this.tbNum = new System.Windows.Forms.TabPage();
+            this.dgvTurnos = new System.Windows.Forms.DataGridView();
+            this.txtBuscarTurnos = new System.Windows.Forms.TextBox();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.btnBuscarTurno = new System.Windows.Forms.Button();
+            this.btnCrearTurno = new System.Windows.Forms.Button();
             this.pnlOpciones.SuspendLayout();
             this.pnlApp.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -83,6 +77,7 @@ namespace Eldecos
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
             this.tbMedicos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlOpciones
@@ -180,7 +175,7 @@ namespace Eldecos
             this.lblLinea.AutoSize = true;
             this.lblLinea.Location = new System.Drawing.Point(-3, 105);
             this.lblLinea.Name = "lblLinea";
-            this.lblLinea.Size = new System.Drawing.Size(181, 13);
+            this.lblLinea.Size = new System.Drawing.Size(239, 15);
             this.lblLinea.TabIndex = 0;
             this.lblLinea.Text = "----------------------------------------------------------";
             // 
@@ -228,132 +223,17 @@ namespace Eldecos
             // 
             // tbTurnos
             // 
-            this.tbTurnos.Controls.Add(this.lblMes);
-            this.tbTurnos.Controls.Add(this.btnSiguiente);
-            this.tbTurnos.Controls.Add(this.btnAnterior);
-            this.tbTurnos.Controls.Add(this.label14);
-            this.tbTurnos.Controls.Add(this.label13);
-            this.tbTurnos.Controls.Add(this.label12);
-            this.tbTurnos.Controls.Add(this.label11);
-            this.tbTurnos.Controls.Add(this.label10);
-            this.tbTurnos.Controls.Add(this.label9);
-            this.tbTurnos.Controls.Add(this.label8);
-            this.tbTurnos.Controls.Add(this.flpDias);
+            this.tbTurnos.Controls.Add(this.btnCrearTurno);
+            this.tbTurnos.Controls.Add(this.btnBuscarTurno);
+            this.tbTurnos.Controls.Add(this.lblFecha);
+            this.tbTurnos.Controls.Add(this.txtBuscarTurnos);
+            this.tbTurnos.Controls.Add(this.dgvTurnos);
             this.tbTurnos.Location = new System.Drawing.Point(4, 25);
             this.tbTurnos.Name = "tbTurnos";
             this.tbTurnos.Padding = new System.Windows.Forms.Padding(3);
             this.tbTurnos.Size = new System.Drawing.Size(1175, 852);
             this.tbTurnos.TabIndex = 0;
             this.tbTurnos.UseVisualStyleBackColor = true;
-            // 
-            // lblMes
-            // 
-            this.lblMes.AutoSize = true;
-            this.lblMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMes.Location = new System.Drawing.Point(1009, 64);
-            this.lblMes.Name = "lblMes";
-            this.lblMes.Size = new System.Drawing.Size(40, 29);
-            this.lblMes.TabIndex = 10;
-            this.lblMes.Text = "---";
-            this.lblMes.UseMnemonic = false;
-            // 
-            // btnSiguiente
-            // 
-            this.btnSiguiente.Location = new System.Drawing.Point(846, 686);
-            this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(67, 31);
-            this.btnSiguiente.TabIndex = 9;
-            this.btnSiguiente.Text = "Sig >";
-            this.btnSiguiente.UseVisualStyleBackColor = true;
-            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
-            // 
-            // btnAnterior
-            // 
-            this.btnAnterior.Location = new System.Drawing.Point(767, 686);
-            this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(70, 31);
-            this.btnAnterior.TabIndex = 8;
-            this.btnAnterior.Text = "< Ant";
-            this.btnAnterior.UseVisualStyleBackColor = true;
-            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(812, 52);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(92, 25);
-            this.label14.TabIndex = 7;
-            this.label14.Text = "Sábado";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(681, 52);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(92, 25);
-            this.label13.TabIndex = 6;
-            this.label13.Text = "Viernes";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(558, 52);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(87, 25);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Jueves";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(418, 52);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(114, 25);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Miercoles";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(306, 52);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(84, 25);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Martes";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(183, 52);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 25);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Lunes";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(45, 52);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 25);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Domingo";
-            // 
-            // flpDias
-            // 
-            this.flpDias.AutoScroll = true;
-            this.flpDias.Location = new System.Drawing.Point(39, 80);
-            this.flpDias.Name = "flpDias";
-            this.flpDias.Size = new System.Drawing.Size(883, 590);
-            this.flpDias.TabIndex = 0;
             // 
             // tbFichas
             // 
@@ -390,7 +270,7 @@ namespace Eldecos
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(346, 20);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(642, 73);
+            this.label7.Size = new System.Drawing.Size(783, 91);
             this.label7.TabIndex = 19;
             this.label7.Text = "Listado de pacientes";
             // 
@@ -409,7 +289,7 @@ namespace Eldecos
             this.lblBuscar.AutoSize = true;
             this.lblBuscar.Location = new System.Drawing.Point(77, 499);
             this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(89, 13);
+            this.lblBuscar.Size = new System.Drawing.Size(101, 15);
             this.lblBuscar.TabIndex = 17;
             this.lblBuscar.Text = "Buscar pacientes";
             // 
@@ -425,7 +305,7 @@ namespace Eldecos
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(666, 622);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 13);
+            this.label6.Size = new System.Drawing.Size(28, 15);
             this.label6.TabIndex = 15;
             this.label6.Text = "DNI";
             // 
@@ -442,6 +322,7 @@ namespace Eldecos
             this.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPacientes.Location = new System.Drawing.Point(243, 122);
             this.dgvPacientes.Name = "dgvPacientes";
+            this.dgvPacientes.RowHeadersWidth = 51;
             this.dgvPacientes.Size = new System.Drawing.Size(822, 460);
             this.dgvPacientes.TabIndex = 13;
             // 
@@ -480,7 +361,7 @@ namespace Eldecos
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(867, 622);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 13);
+            this.label5.Size = new System.Drawing.Size(43, 15);
             this.label5.TabIndex = 9;
             this.label5.Text = "E-Mail";
             // 
@@ -489,7 +370,7 @@ namespace Eldecos
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(765, 622);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.Size = new System.Drawing.Size(55, 15);
             this.label4.TabIndex = 8;
             this.label4.Text = "Teléfono";
             // 
@@ -498,7 +379,7 @@ namespace Eldecos
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(566, 622);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(59, 15);
             this.label3.TabIndex = 7;
             this.label3.Text = "Dirección";
             // 
@@ -507,7 +388,7 @@ namespace Eldecos
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(466, 622);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(51, 15);
             this.label2.TabIndex = 6;
             this.label2.Text = "Apellido";
             // 
@@ -516,7 +397,7 @@ namespace Eldecos
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(366, 622);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(52, 15);
             this.label1.TabIndex = 5;
             this.label1.Text = "Nombre";
             // 
@@ -571,7 +452,7 @@ namespace Eldecos
             this.lblMedicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMedicos.Location = new System.Drawing.Point(286, 99);
             this.lblMedicos.Name = "lblMedicos";
-            this.lblMedicos.Size = new System.Drawing.Size(603, 73);
+            this.lblMedicos.Size = new System.Drawing.Size(738, 91);
             this.lblMedicos.TabIndex = 1;
             this.lblMedicos.Text = "Listado de Médicos";
             // 
@@ -580,6 +461,7 @@ namespace Eldecos
             this.dgvMedicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMedicos.Location = new System.Drawing.Point(306, 199);
             this.dgvMedicos.Name = "dgvMedicos";
+            this.dgvMedicos.RowHeadersWidth = 51;
             this.dgvMedicos.Size = new System.Drawing.Size(563, 270);
             this.dgvMedicos.TabIndex = 0;
             // 
@@ -590,6 +472,50 @@ namespace Eldecos
             this.tbNum.Size = new System.Drawing.Size(1175, 852);
             this.tbNum.TabIndex = 3;
             this.tbNum.UseVisualStyleBackColor = true;
+            // 
+            // dgvTurnos
+            // 
+            this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTurnos.Location = new System.Drawing.Point(253, 96);
+            this.dgvTurnos.Name = "dgvTurnos";
+            this.dgvTurnos.RowHeadersWidth = 51;
+            this.dgvTurnos.Size = new System.Drawing.Size(689, 286);
+            this.dgvTurnos.TabIndex = 0;
+            // 
+            // txtBuscarTurnos
+            // 
+            this.txtBuscarTurnos.Location = new System.Drawing.Point(96, 461);
+            this.txtBuscarTurnos.Name = "txtBuscarTurnos";
+            this.txtBuscarTurnos.Size = new System.Drawing.Size(217, 20);
+            this.txtBuscarTurnos.TabIndex = 1;
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(93, 434);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(41, 15);
+            this.lblFecha.TabIndex = 2;
+            this.lblFecha.Text = "Fecha";
+            // 
+            // btnBuscarTurno
+            // 
+            this.btnBuscarTurno.Location = new System.Drawing.Point(93, 487);
+            this.btnBuscarTurno.Name = "btnBuscarTurno";
+            this.btnBuscarTurno.Size = new System.Drawing.Size(89, 31);
+            this.btnBuscarTurno.TabIndex = 3;
+            this.btnBuscarTurno.Text = "&Buscar";
+            this.btnBuscarTurno.UseVisualStyleBackColor = true;
+            // 
+            // btnCrearTurno
+            // 
+            this.btnCrearTurno.Location = new System.Drawing.Point(931, 35);
+            this.btnCrearTurno.Name = "btnCrearTurno";
+            this.btnCrearTurno.Size = new System.Drawing.Size(104, 26);
+            this.btnCrearTurno.TabIndex = 4;
+            this.btnCrearTurno.Text = "+ Nuevo turno";
+            this.btnCrearTurno.UseVisualStyleBackColor = true;
+            this.btnCrearTurno.Click += new System.EventHandler(this.btnCrearTurno_Click);
             // 
             // FormGestion
             // 
@@ -615,6 +541,7 @@ namespace Eldecos
             this.tbMedicos.ResumeLayout(false);
             this.tbMedicos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -663,18 +590,12 @@ namespace Eldecos
         private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.FlowLayoutPanel flpDias;
-        private System.Windows.Forms.Button btnSiguiente;
-        private System.Windows.Forms.Button btnAnterior;
-        private System.Windows.Forms.Label lblMes;
         private System.Windows.Forms.DataGridView dgvMedicos;
         private System.Windows.Forms.Label lblMedicos;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.TextBox txtBuscarTurnos;
+        private System.Windows.Forms.DataGridView dgvTurnos;
+        private System.Windows.Forms.Button btnCrearTurno;
+        private System.Windows.Forms.Button btnBuscarTurno;
     }
 }

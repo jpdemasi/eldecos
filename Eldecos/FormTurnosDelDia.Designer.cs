@@ -41,15 +41,16 @@
             // dgvTurnos
             // 
             this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTurnos.Location = new System.Drawing.Point(179, 84);
+            this.dgvTurnos.Location = new System.Drawing.Point(206, 84);
             this.dgvTurnos.Name = "dgvTurnos";
+            this.dgvTurnos.RowHeadersWidth = 51;
             this.dgvTurnos.Size = new System.Drawing.Size(388, 178);
             this.dgvTurnos.TabIndex = 0;
             // 
             // cmbMedicos
             // 
             this.cmbMedicos.FormattingEnabled = true;
-            this.cmbMedicos.Location = new System.Drawing.Point(112, 317);
+            this.cmbMedicos.Location = new System.Drawing.Point(195, 317);
             this.cmbMedicos.Name = "cmbMedicos";
             this.cmbMedicos.Size = new System.Drawing.Size(120, 21);
             this.cmbMedicos.TabIndex = 1;
@@ -57,7 +58,7 @@
             // cmbPacientes
             // 
             this.cmbPacientes.FormattingEnabled = true;
-            this.cmbPacientes.Location = new System.Drawing.Point(250, 317);
+            this.cmbPacientes.Location = new System.Drawing.Point(333, 317);
             this.cmbPacientes.Name = "cmbPacientes";
             this.cmbPacientes.Size = new System.Drawing.Size(120, 21);
             this.cmbPacientes.TabIndex = 2;
@@ -65,14 +66,14 @@
             // cmbHora
             // 
             this.cmbHora.FormattingEnabled = true;
-            this.cmbHora.Location = new System.Drawing.Point(403, 317);
+            this.cmbHora.Location = new System.Drawing.Point(486, 317);
             this.cmbHora.Name = "cmbHora";
             this.cmbHora.Size = new System.Drawing.Size(120, 21);
             this.cmbHora.TabIndex = 3;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(179, 367);
+            this.btnAgregar.Location = new System.Drawing.Point(262, 367);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 4;
@@ -81,7 +82,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(271, 367);
+            this.btnModificar.Location = new System.Drawing.Point(354, 367);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 5;
@@ -90,7 +91,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(367, 367);
+            this.btnEliminar.Location = new System.Drawing.Point(450, 367);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 6;
