@@ -15,22 +15,36 @@ using Newtonsoft.Json;
 
 namespace Eldecos
 {
+
     public partial class FormTurnosDelDia : Form
     {
         private DateTime fechaSeleccionada;
         private GestorTurnos gestorTurnos;
         private GestorMedicos gestorMedicos;
-        private GestorPacientes gestorPacientes;
+        private GestorPacientes gestorPacientes = new GestorPacientes();
         private int turnoSeleccionadoId;
 
         public FormTurnosDelDia(DateTime fecha)
         {
             InitializeComponent();
+            CargarListaTurnosPacientes();
             this.fechaSeleccionada = fecha;
             this.gestorTurnos = new GestorTurnos();
             this.gestorMedicos = new GestorMedicos();
             this.gestorPacientes = new GestorPacientes();
-            this.dgvTurnos.CellClick += dgvTurnos_CellClick;
+        }
+
+        private async Task CargarListaTurnosPacientes()
+        {
+            try
+            {
+                dgvTurnos.DataSource = await gestorPacientes.CargarDatosAsync();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudieron cargar los datos iniciales desde la API: " + ex.Message, "Error");
+            }
         }
 
         private async void FormTurnosDelDia_Load(object sender, EventArgs e)
@@ -102,28 +116,8 @@ namespace Eldecos
             }
         }
 
-        private void dgvTurnos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow filaSeleccionada = dgvTurnos.Rows[e.RowIndex];
-
-                turnoSeleccionadoId = Convert.ToInt32(filaSeleccionada.Cells["id"].Value);
-
-                if (filaSeleccionada.Cells["medico_id"].Value != null)
-                {
-                    cmbMedicos.SelectedValue = Convert.ToInt32(filaSeleccionada.Cells["medico_id"].Value);
-                }
-                if (filaSeleccionada.Cells["paciente_id"].Value != null)
-                {
-                    cmbPacientes.SelectedValue = Convert.ToInt32(filaSeleccionada.Cells["paciente_id"].Value);
-                }
-                if (filaSeleccionada.Cells["hora"].Value != null)
-                {
-                    cmbHora.SelectedItem = filaSeleccionada.Cells["hora"].Value.ToString();
-                }
-            }
-        }
+        
+        
 
         private async void btnModificar_Click(object sender, EventArgs e)
         {
@@ -174,6 +168,11 @@ namespace Eldecos
                     turnoSeleccionadoId = 0;
                 }
             }
+        }
+
+        private void mntCalendario_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            txtFecha.Text = mntCalendario.SelectionStart.ToShortDateString();
         }
     }
 }

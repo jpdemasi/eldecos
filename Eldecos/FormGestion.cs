@@ -27,21 +27,15 @@ namespace Eldecos
         public FormGestion()
         {
             InitializeComponent();
-            // Se elimina la inicialización de 'fechaActual'.
-            // fechaActual = DateTime.Now;
-
-            // 1. Inicializa todos los gestores primero.
             gestorPacientes = new GestorPacientes();
             gestorMedicos = new GestorMedicos();
-            // Se elimina la inicialización de 'gestorTurnos'.
-            // gestorTurnos = new GestorTurnos();
+
 
             dgvPacientes.CellClick += dgvPacientes_CellClick;
 
-            // 2. Ahora, puedes llamar a los métodos que usan los gestores.
+  
             CargarDatosDesdeApiAsync();
-            // Se elimina la llamada a 'CargarDias()'.
-            // CargarDias();
+
 
             tbRecepcion.SelectedIndex = 0;
         }
@@ -76,9 +70,7 @@ namespace Eldecos
 
         }
 
-        // Se elimina el método 'CargarDias()'.
-        // private async void CargarDias()
-        // { ... }
+
 
         private void btnTurnos_Click(object sender, EventArgs e)
         {
