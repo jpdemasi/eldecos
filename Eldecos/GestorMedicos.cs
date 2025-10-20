@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Net.Http;
 using System.Text;
@@ -28,6 +29,26 @@ namespace Eldecos
                 var jsonResponse = await response.Content.ReadAsStringAsync();
                 var medicos = JsonConvert.DeserializeObject<DataTable>(jsonResponse);
 
+                return medicos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los médicos desde la API: " + ex.Message, "Error");
+                return null;
+            }
+        }
+
+        public async Task<List<Medico>> CargarListaMedicosTurno()
+        {
+            List<Medico> listaMedico = new List<Medico>();
+            try
+            {
+                var response = await _httpClient.GetAsync(BaseUrl);
+                response.EnsureSuccessStatusCode();
+
+                var jsonResponse = await response.Content.ReadAsStringAsync();
+                var medicos = JsonConvert.DeserializeObject<List<Medico>>(jsonResponse);
+                listaMedico = medicos;
                 return medicos;
             }
             catch (Exception ex)

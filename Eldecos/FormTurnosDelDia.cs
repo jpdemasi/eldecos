@@ -19,26 +19,65 @@ namespace Eldecos
     public partial class FormTurnosDelDia : Form
     {
         private DateTime fechaSeleccionada;
-        private GestorTurnos gestorTurnos;
-        private GestorMedicos gestorMedicos;
+        private GestorTurnos gestorTurnos = new GestorTurnos();
+        private GestorMedicos gestorMedicos = new GestorMedicos();
         private GestorPacientes gestorPacientes = new GestorPacientes();
+       
+
         private int turnoSeleccionadoId;
 
         public FormTurnosDelDia(DateTime fecha)
         {
             InitializeComponent();
             CargarListaTurnosPacientes();
+            CargarMedicos();
+            CargarDatosDesdeApiAsync();
             this.fechaSeleccionada = fecha;
             this.gestorTurnos = new GestorTurnos();
             this.gestorMedicos = new GestorMedicos();
             this.gestorPacientes = new GestorPacientes();
         }
 
+        private async Task CargarDatosDesdeApiAsync()
+        {
+            try
+            {
+                dgvTurnos.DataSource = await gestorTurnos.ObtenerTodosLosTurnosAsync();
+              
+             
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudieron cargar los datos iniciales desde la API: " + ex.Message, "Error");
+            }
+        }
+
+
         private async Task CargarListaTurnosPacientes()
         {
             try
             {
                 dgvTurnos.DataSource = await gestorPacientes.CargarDatosAsync();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudieron cargar los datos iniciales desde la API: " + ex.Message, "Error");
+            }
+        }
+
+        private async Task CargarMedicos()
+        {
+            try
+            {
+                var listaMedicos = await gestorMedicos.CargarListaMedicosTurno();
+              
+
+                cmbMedicos.DataSource = listaMedicos;
+              
+                cmbMedicos.DisplayMember = "nombre";
+                cmbMedicos.ValueMember = "id";
+                cmbMedicos.DataSource = listaMedicos;
 
             }
             catch (Exception ex)
@@ -78,9 +117,7 @@ namespace Eldecos
                 cmbMedicos.DisplayMember = "nombre";
                 cmbMedicos.ValueMember = "id";
 
-                cmbPacientes.DataSource = await gestorPacientes.CargarDatosAsync();
-                cmbPacientes.DisplayMember = "pnombre";
-                cmbPacientes.ValueMember = "id";
+
             }
             catch (Exception ex)
             {
@@ -90,30 +127,7 @@ namespace Eldecos
 
         private async void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (cmbMedicos.SelectedValue == null || cmbPacientes.SelectedValue == null || cmbHora.SelectedItem == null)
-            {
-                MessageBox.Show("Por favor, selecciona un médico, un paciente y una hora.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            Turno nuevoTurno = new Turno
-            {
-                medico_id = Convert.ToInt32(cmbMedicos.SelectedValue),
-                paciente_id = Convert.ToInt32(cmbPacientes.SelectedValue),
-                fecha = fechaSeleccionada.ToString("yyyy-MM-dd"),
-                hora = cmbHora.SelectedItem.ToString()
-            };
-
-            bool agregado = await gestorTurnos.AgregarTurnoAsync(nuevoTurno);
-            if (agregado)
-            {
-                MessageBox.Show("Turno agregado correctamente.", "Éxito");
-                await CargarDatos(); // Vuelve a cargar los turnos
-            }
-            else
-            {
-                MessageBox.Show("No se pudo agregar el turno.", "Error");
-            }
+           
         }
 
         
@@ -121,26 +135,7 @@ namespace Eldecos
 
         private async void btnModificar_Click(object sender, EventArgs e)
         {
-            if (turnoSeleccionadoId == 0)
-            {
-                MessageBox.Show("Selecciona un turno para modificar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
 
-            Turno turnoModificado = new Turno
-            {
-                medico_id = Convert.ToInt32(cmbMedicos.SelectedValue),
-                paciente_id = Convert.ToInt32(cmbPacientes.SelectedValue),
-                fecha = fechaSeleccionada.ToString("yyyy-MM-dd"),
-                hora = cmbHora.SelectedItem.ToString()
-            };
-
-            bool modificado = await gestorTurnos.ModificarTurnoAsync(turnoSeleccionadoId, turnoModificado);
-            if (modificado)
-            {
-                MessageBox.Show("Turno modificado correctamente.");
-                await CargarDatos();
-            }
         }
 
         private async void btnEliminar_Click(object sender, EventArgs e)
@@ -173,6 +168,22 @@ namespace Eldecos
         private void mntCalendario_DateChanged(object sender, DateRangeEventArgs e)
         {
             txtFecha.Text = mntCalendario.SelectionStart.ToShortDateString();
+        }
+
+        private void FormTurnosDelDia_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvTurnos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string nombre = (string)dgvTurnos.CurrentRow.Cells["pnombre"].Value;
+            txtPaciente.Text = nombre;
         }
     }
 }

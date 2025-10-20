@@ -21,14 +21,14 @@ namespace Eldecos
         private GestorMedicos gestorMedicos;
         private GestorTurnos gestorTurnos;
 
-        // Se elimina la variable 'fechaActual' ya que no se usa para el calendario.
-        // private DateTime fechaActual; 
+
 
         public FormGestion()
         {
             InitializeComponent();
             gestorPacientes = new GestorPacientes();
             gestorMedicos = new GestorMedicos();
+            gestorTurnos = new GestorTurnos();
 
 
             dgvPacientes.CellClick += dgvPacientes_CellClick;
@@ -46,6 +46,7 @@ namespace Eldecos
             {
                 dgvPacientes.DataSource = await gestorPacientes.CargarDatosAsync();
                 dgvMedicos.DataSource = await gestorMedicos.CargarDatosAsync();
+                dgvTurnos.DataSource = await gestorTurnos.ObtenerTodosLosTurnosAsync();
                 EstiloDgvPacientes.AplicarEstilo(dgvPacientes);
                 EstiloDgvMedicos.AplicarEstilo(dgvMedicos);
             }

@@ -18,6 +18,26 @@ namespace Eldecos
             _httpClient = new HttpClient();
         }
 
+        public async Task<DataTable> ObtenerTodosLosTurnosAsync()
+        {
+            try
+            {
+     
+                var response = await _httpClient.GetAsync(BaseUrl);
+                response.EnsureSuccessStatusCode();
+
+                var jsonResponse = await response.Content.ReadAsStringAsync();
+
+                var turnos = JsonConvert.DeserializeObject<DataTable>(jsonResponse);
+                return turnos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar todos los turnos: " + ex.Message, "Error");
+                return null;
+            }
+        }
+
         public async Task<DataTable> ObtenerTurnosPorFechaAsync(string fecha)
         {
             try
