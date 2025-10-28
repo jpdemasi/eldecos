@@ -31,13 +31,13 @@ namespace Eldecos
             InitializeComponent();
             CargarListaTurnosPacientes();
             CargarMedicos();
-            CargarDatosDesdeApiAsync();
+          //  CargarDatosDesdeApiAsync();
             this.fechaSeleccionada = fecha;
             this.gestorTurnos = new GestorTurnos();
             this.gestorMedicos = new GestorMedicos();
             this.gestorPacientes = new GestorPacientes();
         }
-
+/*
         private async Task CargarDatosDesdeApiAsync()
         {
             try
@@ -50,7 +50,7 @@ namespace Eldecos
             {
                 MessageBox.Show("No se pudieron cargar los datos iniciales desde la API: " + ex.Message, "Error");
             }
-        }
+        }*/
 
 
         private async Task CargarListaTurnosPacientes()
@@ -75,7 +75,7 @@ namespace Eldecos
 
                 cmbMedicos.DataSource = listaMedicos;
               
-                cmbMedicos.DisplayMember = "nombre";
+                cmbMedicos.DisplayMember = "especialidad";
                 cmbMedicos.ValueMember = "id";
                 cmbMedicos.DataSource = listaMedicos;
 
@@ -182,8 +182,23 @@ namespace Eldecos
 
         private void dgvTurnos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string nombre = (string)dgvTurnos.CurrentRow.Cells["pnombre"].Value;
-            txtPaciente.Text = nombre;
+            string nombre = dgvTurnos.CurrentRow.Cells["pnombre"].Value.ToString(); 
+            string apellido = dgvTurnos.CurrentRow.Cells["papellido"].Value.ToString();
+
+         
+            object idValue = dgvTurnos.CurrentRow.Cells["id"].Value;
+            int pacienteSeleccionadoId = 0;
+            
+            if (idValue != null && int.TryParse(idValue.ToString(), out int id))
+            {
+                pacienteSeleccionadoId = id; // <-- Guardar el ID
+                txtPaciente.Text = nombre + " " + apellido;
+            }
+            else
+            {
+                pacienteSeleccionadoId = 0;
+                txtPaciente.Text = "Error al obtener ID";
+            }
         }
     }
 }

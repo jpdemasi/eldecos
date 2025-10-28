@@ -32,8 +32,6 @@
             this.cmbMedicos = new System.Windows.Forms.ComboBox();
             this.cmbHora = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.mntCalendario = new System.Windows.Forms.MonthCalendar();
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.txtPaciente = new System.Windows.Forms.TextBox();
@@ -47,21 +45,19 @@
             // dgvTurnos
             // 
             this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTurnos.Location = new System.Drawing.Point(446, 88);
-            this.dgvTurnos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvTurnos.Location = new System.Drawing.Point(334, 72);
             this.dgvTurnos.Name = "dgvTurnos";
             this.dgvTurnos.RowHeadersWidth = 51;
-            this.dgvTurnos.Size = new System.Drawing.Size(517, 219);
+            this.dgvTurnos.Size = new System.Drawing.Size(388, 178);
             this.dgvTurnos.TabIndex = 0;
             this.dgvTurnos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnos_CellClick);
             // 
             // cmbMedicos
             // 
             this.cmbMedicos.FormattingEnabled = true;
-            this.cmbMedicos.Location = new System.Drawing.Point(431, 375);
-            this.cmbMedicos.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbMedicos.Location = new System.Drawing.Point(323, 305);
             this.cmbMedicos.Name = "cmbMedicos";
-            this.cmbMedicos.Size = new System.Drawing.Size(159, 24);
+            this.cmbMedicos.Size = new System.Drawing.Size(120, 21);
             this.cmbMedicos.TabIndex = 1;
             // 
             // cmbHora
@@ -73,105 +69,90 @@
             "11:00 - 11:30",
             "12:00 - 12:30",
             "13:00 - 13:30"});
-            this.cmbHora.Location = new System.Drawing.Point(819, 375);
-            this.cmbHora.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbHora.Location = new System.Drawing.Point(614, 305);
             this.cmbHora.Name = "cmbHora";
-            this.cmbHora.Size = new System.Drawing.Size(159, 24);
+            this.cmbHora.Size = new System.Drawing.Size(120, 21);
             this.cmbHora.TabIndex = 3;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(520, 437);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregar.Location = new System.Drawing.Point(237, 352);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(100, 28);
+            this.btnAgregar.Size = new System.Drawing.Size(326, 74);
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "Cargar turno";
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(643, 437);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(100, 28);
-            this.btnModificar.TabIndex = 5;
-            this.btnModificar.Text = "button2";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(771, 437);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(100, 28);
-            this.btnEliminar.TabIndex = 6;
-            this.btnEliminar.Text = "button3";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
             // mntCalendario
             // 
-            this.mntCalendario.Location = new System.Drawing.Point(74, 100);
+            this.mntCalendario.Location = new System.Drawing.Point(56, 81);
+            this.mntCalendario.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.mntCalendario.Name = "mntCalendario";
             this.mntCalendario.TabIndex = 7;
             this.mntCalendario.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.mntCalendario_DateChanged);
             // 
             // txtFecha
             // 
-            this.txtFecha.Location = new System.Drawing.Point(74, 375);
+            this.txtFecha.Location = new System.Drawing.Point(56, 305);
+            this.txtFecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(196, 22);
+            this.txtFecha.Size = new System.Drawing.Size(148, 20);
             this.txtFecha.TabIndex = 8;
             // 
             // txtPaciente
             // 
-            this.txtPaciente.Location = new System.Drawing.Point(624, 375);
+            this.txtPaciente.Location = new System.Drawing.Point(468, 305);
+            this.txtPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPaciente.Name = "txtPaciente";
-            this.txtPaciente.Size = new System.Drawing.Size(162, 22);
+            this.txtPaciente.Size = new System.Drawing.Size(122, 20);
             this.txtPaciente.TabIndex = 9;
             // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(71, 356);
+            this.lblFecha.Location = new System.Drawing.Point(53, 289);
+            this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(45, 16);
+            this.lblFecha.Size = new System.Drawing.Size(37, 13);
             this.lblFecha.TabIndex = 10;
             this.lblFecha.Text = "Fecha";
             // 
             // lblEspecialista
             // 
             this.lblEspecialista.AutoSize = true;
-            this.lblEspecialista.Location = new System.Drawing.Point(428, 355);
+            this.lblEspecialista.Location = new System.Drawing.Point(321, 288);
+            this.lblEspecialista.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEspecialista.Name = "lblEspecialista";
-            this.lblEspecialista.Size = new System.Drawing.Size(81, 16);
+            this.lblEspecialista.Size = new System.Drawing.Size(63, 13);
             this.lblEspecialista.TabIndex = 11;
             this.lblEspecialista.Text = "Especialista";
             // 
             // lblPaciente
             // 
             this.lblPaciente.AutoSize = true;
-            this.lblPaciente.Location = new System.Drawing.Point(621, 356);
+            this.lblPaciente.Location = new System.Drawing.Point(466, 289);
+            this.lblPaciente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPaciente.Name = "lblPaciente";
-            this.lblPaciente.Size = new System.Drawing.Size(60, 16);
+            this.lblPaciente.Size = new System.Drawing.Size(49, 13);
             this.lblPaciente.TabIndex = 12;
             this.lblPaciente.Text = "Paciente";
             // 
             // lblHorario
             // 
             this.lblHorario.AutoSize = true;
-            this.lblHorario.Location = new System.Drawing.Point(816, 356);
+            this.lblHorario.Location = new System.Drawing.Point(612, 289);
+            this.lblHorario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHorario.Name = "lblHorario";
-            this.lblHorario.Size = new System.Drawing.Size(52, 16);
+            this.lblHorario.Size = new System.Drawing.Size(41, 13);
             this.lblHorario.TabIndex = 13;
             this.lblHorario.Text = "Horario";
             this.lblHorario.Click += new System.EventHandler(this.label3_Click);
             // 
             // FormTurnosDelDia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblHorario);
             this.Controls.Add(this.lblPaciente);
             this.Controls.Add(this.lblEspecialista);
@@ -179,13 +160,10 @@
             this.Controls.Add(this.txtPaciente);
             this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.mntCalendario);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.cmbHora);
             this.Controls.Add(this.cmbMedicos);
             this.Controls.Add(this.dgvTurnos);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormTurnosDelDia";
             this.Text = "FormTurnosDelDia";
             this.Load += new System.EventHandler(this.FormTurnosDelDia_Load_1);
@@ -201,8 +179,6 @@
         private System.Windows.Forms.ComboBox cmbMedicos;
         private System.Windows.Forms.ComboBox cmbHora;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.MonthCalendar mntCalendario;
         private System.Windows.Forms.TextBox txtFecha;
         private System.Windows.Forms.TextBox txtPaciente;

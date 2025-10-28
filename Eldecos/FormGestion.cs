@@ -47,6 +47,34 @@ namespace Eldecos
                 dgvPacientes.DataSource = await gestorPacientes.CargarDatosAsync();
                 dgvMedicos.DataSource = await gestorMedicos.CargarDatosAsync();
                 dgvTurnos.DataSource = await gestorTurnos.ObtenerTodosLosTurnosAsync();
+
+                if (dgvTurnos.Columns.Contains("medico_id"))
+                    dgvTurnos.Columns["medico_id"].Visible = false;
+                if (dgvTurnos.Columns.Contains("paciente_id"))
+                    dgvTurnos.Columns["paciente_id"].Visible = false;
+                if (dgvTurnos.Columns.Contains("id")) 
+                    dgvTurnos.Columns["id"].Visible = false;
+
+                if (dgvTurnos.Columns.Contains("medico_nombre"))
+                    dgvTurnos.Columns["medico_nombre"].HeaderText = "Médico";
+                if (dgvTurnos.Columns.Contains("medico_apellido"))
+                    dgvTurnos.Columns["medico_apellido"].HeaderText = "Apellido Médico";
+                if (dgvTurnos.Columns.Contains("paciente_nombre"))
+                    dgvTurnos.Columns["paciente_nombre"].HeaderText = "Paciente";
+                if (dgvTurnos.Columns.Contains("paciente_apellido"))
+                    dgvTurnos.Columns["paciente_apellido"].HeaderText = "Apellido Paciente";
+
+                // Opcional: Reordenar las columnas para una mejor presentación
+                if (dgvTurnos.Columns.Contains("hora"))
+                    dgvTurnos.Columns["hora"].DisplayIndex = 0;
+                if (dgvTurnos.Columns.Contains("paciente_nombre"))
+                    dgvTurnos.Columns["paciente_nombre"].DisplayIndex = 1;
+                if (dgvTurnos.Columns.Contains("paciente_apellido"))
+                    dgvTurnos.Columns["paciente_apellido"].DisplayIndex = 2;
+                if (dgvTurnos.Columns.Contains("medico_nombre"))
+                    dgvTurnos.Columns["medico_nombre"].DisplayIndex = 3;
+                if (dgvTurnos.Columns.Contains("medico_apellido"))
+                    dgvTurnos.Columns["medico_apellido"].DisplayIndex = 4;
                 EstiloDgvPacientes.AplicarEstilo(dgvPacientes);
                 EstiloDgvMedicos.AplicarEstilo(dgvMedicos);
             }

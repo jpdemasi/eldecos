@@ -29,6 +29,7 @@ namespace Eldecos
                 var jsonResponse = await response.Content.ReadAsStringAsync();
 
                 var turnos = JsonConvert.DeserializeObject<DataTable>(jsonResponse);
+
                 return turnos;
             }
             catch (Exception ex)
