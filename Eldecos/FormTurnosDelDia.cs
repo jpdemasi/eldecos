@@ -22,35 +22,43 @@ namespace Eldecos
         private GestorTurnos gestorTurnos = new GestorTurnos();
         private GestorMedicos gestorMedicos = new GestorMedicos();
         private GestorPacientes gestorPacientes = new GestorPacientes();
-       
+        public delegate Task RecargarDatosDelegate();
+
 
         private int turnoSeleccionadoId;
 
-        public FormTurnosDelDia(DateTime fecha)
+        // public delegate Task RecargarDatosDelegate();
+
+        // 2. Variable para almacenar la referencia a la función del padre
+        private RecargarDatosDelegate _recargarDatosPadre;
+
+        // Modificación del constructor
+        public FormTurnosDelDia(DateTime fecha, RecargarDatosDelegate recargaDatos)
         {
+            _recargarDatosPadre = recargaDatos;
             InitializeComponent();
             CargarListaTurnosPacientes();
             CargarMedicos();
-          //  CargarDatosDesdeApiAsync();
+            //  CargarDatosDesdeApiAsync();
             this.fechaSeleccionada = fecha;
             this.gestorTurnos = new GestorTurnos();
             this.gestorMedicos = new GestorMedicos();
             this.gestorPacientes = new GestorPacientes();
         }
-/*
-        private async Task CargarDatosDesdeApiAsync()
-        {
-            try
-            {
-                dgvTurnos.DataSource = await gestorTurnos.ObtenerTodosLosTurnosAsync();
-              
-             
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudieron cargar los datos iniciales desde la API: " + ex.Message, "Error");
-            }
-        }*/
+        /*
+                private async Task CargarDatosDesdeApiAsync()
+                {
+                    try
+                    {
+                        dgvTurnos.DataSource = await gestorTurnos.ObtenerTodosLosTurnosAsync();
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("No se pudieron cargar los datos iniciales desde la API: " + ex.Message, "Error");
+                    }
+                }*/
 
 
         private async Task CargarListaTurnosPacientes()
@@ -71,10 +79,10 @@ namespace Eldecos
             try
             {
                 var listaMedicos = await gestorMedicos.CargarListaMedicosTurno();
-              
+
 
                 cmbMedicos.DataSource = listaMedicos;
-              
+
                 cmbMedicos.DisplayMember = "especialidad";
                 cmbMedicos.ValueMember = "id";
                 cmbMedicos.DataSource = listaMedicos;
@@ -125,13 +133,10 @@ namespace Eldecos
             }
         }
 
-        private async void btnAgregar_Click(object sender, EventArgs e)
-        {
-           
-        }
 
-        
-        
+
+
+
 
         private async void btnModificar_Click(object sender, EventArgs e)
         {
@@ -182,13 +187,13 @@ namespace Eldecos
 
         private void dgvTurnos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string nombre = dgvTurnos.CurrentRow.Cells["pnombre"].Value.ToString(); 
+            string nombre = dgvTurnos.CurrentRow.Cells["pnombre"].Value.ToString();
             string apellido = dgvTurnos.CurrentRow.Cells["papellido"].Value.ToString();
 
-         
+
             object idValue = dgvTurnos.CurrentRow.Cells["id"].Value;
             int pacienteSeleccionadoId = 0;
-            
+
             if (idValue != null && int.TryParse(idValue.ToString(), out int id))
             {
                 pacienteSeleccionadoId = id; // <-- Guardar el ID
@@ -198,6 +203,40 @@ namespace Eldecos
             {
                 pacienteSeleccionadoId = 0;
                 txtPaciente.Text = "Error al obtener ID";
+            }
+        }
+
+        private async void btnAgregar_Click(object sender, EventArgs e)
+        {
+            {
+                /*
+                 cmbMedicos
+                 txtPaciente
+                 cmbHora
+                 txtFecha
+                 */
+                Turno turno = new Turno();
+                turno.fecha = txtFecha.Text;
+                turno.hora = cmbHora.Text;
+                if (cmbMedicos.SelectedItem is Medico medicoSeleccionado)
+                {
+                    turno.medico_id = medicoSeleccionado.id;
+                }
+                foreach (DataGridViewRow row in dgvTurnos.SelectedRows)
+                {
+                    if (row.Cells["ID"].Value != null)
+                    {
+                        turno.paciente_id = Convert.ToInt32(row.Cells["ID"].Value);
+                    }
+                }
+                gestorTurnos.AgregarTurnoAsync(turno);
+
+                if (_recargarDatosPadre != null)
+                {
+                    await _recargarDatosPadre();
+                }
+
+
             }
         }
     }

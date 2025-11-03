@@ -23,6 +23,7 @@ namespace Eldecos
 
 
 
+
         public FormGestion()
         {
             InitializeComponent();
@@ -33,14 +34,14 @@ namespace Eldecos
 
             dgvPacientes.CellClick += dgvPacientes_CellClick;
 
-  
+
             CargarDatosDesdeApiAsync();
 
 
             tbRecepcion.SelectedIndex = 0;
         }
 
-        private async Task CargarDatosDesdeApiAsync()
+        public async Task CargarDatosDesdeApiAsync()
         {
             try
             {
@@ -52,7 +53,7 @@ namespace Eldecos
                     dgvTurnos.Columns["medico_id"].Visible = false;
                 if (dgvTurnos.Columns.Contains("paciente_id"))
                     dgvTurnos.Columns["paciente_id"].Visible = false;
-                if (dgvTurnos.Columns.Contains("id")) 
+                if (dgvTurnos.Columns.Contains("id"))
                     dgvTurnos.Columns["id"].Visible = false;
 
                 if (dgvTurnos.Columns.Contains("medico_nombre"))
@@ -271,8 +272,9 @@ namespace Eldecos
 
         private void btnCrearTurno_Click(object sender, EventArgs e)
         {
-            FormTurnosDelDia formTurnos = new FormTurnosDelDia(new DateTime());
+            FormTurnosDelDia formTurnos = new FormTurnosDelDia(new DateTime(), this.CargarDatosDesdeApiAsync);
             formTurnos.ShowDialog();
+
         }
     }
 }

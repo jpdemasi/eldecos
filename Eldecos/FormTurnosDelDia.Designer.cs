@@ -47,7 +47,9 @@
             this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTurnos.Location = new System.Drawing.Point(334, 72);
             this.dgvTurnos.Name = "dgvTurnos";
+            this.dgvTurnos.ReadOnly = true;
             this.dgvTurnos.RowHeadersWidth = 51;
+            this.dgvTurnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTurnos.Size = new System.Drawing.Size(388, 178);
             this.dgvTurnos.TabIndex = 0;
             this.dgvTurnos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnos_CellClick);
@@ -82,11 +84,12 @@
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "Cargar turno";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // mntCalendario
             // 
             this.mntCalendario.Location = new System.Drawing.Point(56, 81);
-            this.mntCalendario.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.mntCalendario.Margin = new System.Windows.Forms.Padding(7);
             this.mntCalendario.Name = "mntCalendario";
             this.mntCalendario.TabIndex = 7;
             this.mntCalendario.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.mntCalendario_DateChanged);
@@ -94,7 +97,7 @@
             // txtFecha
             // 
             this.txtFecha.Location = new System.Drawing.Point(56, 305);
-            this.txtFecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFecha.Margin = new System.Windows.Forms.Padding(2);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(148, 20);
             this.txtFecha.TabIndex = 8;
@@ -102,7 +105,7 @@
             // txtPaciente
             // 
             this.txtPaciente.Location = new System.Drawing.Point(468, 305);
-            this.txtPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPaciente.Margin = new System.Windows.Forms.Padding(2);
             this.txtPaciente.Name = "txtPaciente";
             this.txtPaciente.Size = new System.Drawing.Size(122, 20);
             this.txtPaciente.TabIndex = 9;

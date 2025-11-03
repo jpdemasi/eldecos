@@ -22,7 +22,7 @@ namespace Eldecos
         {
             try
             {
-     
+
                 var response = await _httpClient.GetAsync(BaseUrl);
                 response.EnsureSuccessStatusCode();
 
@@ -85,6 +85,7 @@ namespace Eldecos
 
                 var response = await _httpClient.PostAsync(BaseUrl, content);
                 response.EnsureSuccessStatusCode();
+                MessageBox.Show("Se ha registrado El turno con Éxito!");
                 return response.IsSuccessStatusCode;
             }
             catch (Exception ex)

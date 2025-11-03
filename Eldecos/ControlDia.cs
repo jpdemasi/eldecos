@@ -65,7 +65,7 @@ namespace Eldecos
                 }
 
                 // 3. Si es un día hábil, se procede a abrir el formulario de turnos.
-                FormTurnosDelDia formTurnos = new FormTurnosDelDia(Fecha);
+                FormTurnosDelDia formTurnos = new FormTurnosDelDia(Fecha, null);
                 formTurnos.ShowDialog();
             }
         }
